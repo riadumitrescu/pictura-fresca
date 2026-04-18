@@ -197,7 +197,7 @@ a{color:inherit;text-decoration:none}
   .nav-inner{padding:0 16px}
   .hero{grid-template-columns:1fr;padding:32px 16px;min-height:auto}
   .hero-text h1{font-size:32px}
-  .hero-illust svg{width:260px;height:260px}
+  .hero-illust img{max-width:340px}
   .page-wrap{padding:20px 16px}
   .home-cats{grid-template-columns:repeat(2,1fr);gap:10px}
   .home-featured{grid-template-columns:1fr}
@@ -213,7 +213,7 @@ a{color:inherit;text-decoration:none}
 }
 @media(max-width:480px){
   .hero-text h1{font-size:28px}
-  .hero-illust svg{width:200px;height:200px}
+  .hero-illust img{max-width:280px}
   .home-cats{grid-template-columns:1fr 1fr}
   .products{grid-template-columns:1fr}
 }
@@ -299,97 +299,7 @@ a{color:inherit;text-decoration:none}
       </div>
     </div>
     <div class="hero-illust">
-      <svg width="380" height="380" viewBox="0 0 380 380" fill="none">
-        <!-- Arch structure -->
-        <path d="M60 350 L60 160 Q60 40 190 40 Q320 40 320 160 L320 350" fill="#F7F5F2" stroke="#E0DAD0" stroke-width="2"/>
-        <path d="M75 350 L75 165 Q75 55 190 55 Q305 55 305 165 L305 350" fill="#FDFCFA" stroke="#EAE5DC" stroke-width="1"/>
-
-        <!-- Fresco painting inside arch -->
-        <!-- Sky wash -->
-        <clipPath id="archClip"><path d="M80 350 L80 168 Q80 60 190 60 Q300 60 300 168 L300 350 Z"/></clipPath>
-        <g clip-path="url(#archClip)">
-          <!-- Sky gradient -->
-          <rect x="80" y="60" width="220" height="290" fill="url(#skyGrad)"/>
-
-          <!-- Soft landscape washes — like actual fresco brushwork -->
-          <!-- Distant hills -->
-          <path d="M80 220 Q120 190 160 205 Q200 185 240 200 Q280 188 300 210 L300 260 L80 260 Z" fill="#7B8E65" opacity="0.2"/>
-          <path d="M80 235 Q130 210 170 225 Q210 205 250 218 Q290 208 300 228 L300 270 L80 270 Z" fill="#7B8E65" opacity="0.15"/>
-
-          <!-- Warm earth -->
-          <path d="M80 260 Q140 245 190 255 Q240 248 300 258 L300 350 L80 350 Z" fill="#D4A843" opacity="0.12"/>
-
-          <!-- Brush strokes — sinopia -->
-          <path d="M120 140 Q140 130 155 140 Q165 148 175 138 Q188 128 200 140" stroke="#C45538" stroke-width="12" stroke-linecap="round" fill="none" opacity="0.25"/>
-          <path d="M130 155 Q150 148 168 158 Q182 165 200 152" stroke="#C45538" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.15"/>
-
-          <!-- Brush strokes — ultramarine -->
-          <path d="M160 100 Q185 88 210 100 Q230 110 255 98" stroke="#3B5E8C" stroke-width="14" stroke-linecap="round" fill="none" opacity="0.2"/>
-          <path d="M175 118 Q195 108 220 115 Q240 122 258 112" stroke="#3B5E8C" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.12"/>
-
-          <!-- Brush strokes — ochre -->
-          <path d="M100 180 Q130 168 160 178 Q185 185 210 172 Q235 165 260 178" stroke="#D4A843" stroke-width="10" stroke-linecap="round" fill="none" opacity="0.22"/>
-
-          <!-- Brush strokes — terra verde -->
-          <path d="M110 200 Q135 192 155 202 Q175 210 200 198 Q225 190 250 202" stroke="#7B8E65" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.2"/>
-
-          <!-- Gold leaf accent — small gilded area -->
-          <rect x="170" y="88" width="22" height="22" rx="1" fill="url(#goldGrad)" opacity="0.5"/>
-          <rect x="172" y="90" width="18" height="18" rx="0.5" fill="none" stroke="#DAC06A" stroke-width="0.4" opacity="0.6"/>
-
-          <!-- Subtle fresco texture dots -->
-          <circle cx="140" cy="120" r="1.5" fill="#C45538" opacity="0.15"/>
-          <circle cx="220" cy="140" r="2" fill="#3B5E8C" opacity="0.1"/>
-          <circle cx="180" cy="200" r="1.5" fill="#7B8E65" opacity="0.12"/>
-          <circle cx="250" cy="170" r="1" fill="#D4A843" opacity="0.15"/>
-          <circle cx="120" cy="190" r="1" fill="#C45538" opacity="0.1"/>
-        </g>
-
-        <!-- Arch keystone detail -->
-        <path d="M180 42 L190 32 L200 42" fill="none" stroke="#D0C8BC" stroke-width="1.5"/>
-
-        <!-- Column bases -->
-        <rect x="52" y="340" width="20" height="12" rx="2" fill="#EAE5DC" stroke="#D8D0C4" stroke-width="1"/>
-        <rect x="308" y="340" width="20" height="12" rx="2" fill="#EAE5DC" stroke="#D8D0C4" stroke-width="1"/>
-
-        <!-- Pigment bowls at base of arch -->
-        <!-- Bowl 1: Sinopia -->
-        <ellipse cx="110" cy="330" rx="18" ry="6" fill="#E0DAD0"/>
-        <path d="M92 326 Q92 316 110 314 Q128 316 128 326" fill="#EDEAE4" stroke="#D8D0C4" stroke-width="0.8"/>
-        <ellipse cx="110" cy="318" rx="15" ry="5" fill="#F2EFEA"/>
-        <ellipse cx="110" cy="317" rx="11" ry="3.5" fill="#C45538" opacity="0.7"/>
-
-        <!-- Bowl 2: Ultramarine -->
-        <ellipse cx="160" cy="338" rx="16" ry="5.5" fill="#E0DAD0"/>
-        <path d="M144 334 Q144 325 160 323 Q176 325 176 334" fill="#EDEAE4" stroke="#D8D0C4" stroke-width="0.8"/>
-        <ellipse cx="160" cy="327" rx="13" ry="4.5" fill="#F2EFEA"/>
-        <ellipse cx="160" cy="326" rx="10" ry="3" fill="#3B5E8C" opacity="0.7"/>
-
-        <!-- Bowl 3: Ochre -->
-        <ellipse cx="215" cy="336" rx="17" ry="5.5" fill="#E0DAD0"/>
-        <path d="M198 332 Q198 323 215 321 Q232 323 232 332" fill="#EDEAE4" stroke="#D8D0C4" stroke-width="0.8"/>
-        <ellipse cx="215" cy="325" rx="14" ry="4.5" fill="#F2EFEA"/>
-        <ellipse cx="215" cy="324" rx="10" ry="3" fill="#D4A843" opacity="0.7"/>
-
-        <!-- Bowl 4: Terra Verde -->
-        <ellipse cx="268" cy="330" rx="15" ry="5" fill="#E0DAD0"/>
-        <path d="M253 326 Q253 318 268 316 Q283 318 283 326" fill="#EDEAE4" stroke="#D8D0C4" stroke-width="0.8"/>
-        <ellipse cx="268" cy="320" rx="12" ry="4" fill="#F2EFEA"/>
-        <ellipse cx="268" cy="319" rx="9" ry="3" fill="#7B8E65" opacity="0.7"/>
-
-        <defs>
-          <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#EBD98F"/>
-            <stop offset="50%" stop-color="#D4A843"/>
-            <stop offset="100%" stop-color="#C49A38"/>
-          </linearGradient>
-          <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#E8EDF4" stop-opacity="0.5"/>
-            <stop offset="60%" stop-color="#F5F3EE" stop-opacity="0.3"/>
-            <stop offset="100%" stop-color="#F0ECE6" stop-opacity="0.2"/>
-          </linearGradient>
-        </defs>
-      </svg>
+      <img src="https://images.unsplash.com/photo-1579783928621-7a13d66a62d1?w=600&h=500&fit=crop" alt="Pigmenți naturali" style="border-radius:14px;width:100%;max-width:480px;height:auto;object-fit:cover">
     </div>
   </div>
 
