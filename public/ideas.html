@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fresca — Direcții de Brand</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#F7F4EF;color:#2C2824;font-family:'DM Sans',sans-serif;-webkit-font-smoothing:antialiased}
+
+.page-head{padding:72px 56px 48px;max-width:1400px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-end}
+.page-head h1{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:400;letter-spacing:-1px}
+.page-head .meta{font-size:11px;color:#B5A99A;letter-spacing:1.5px;text-transform:uppercase;text-align:right;line-height:1.8}
+
+.wrap{max-width:1400px;margin:0 auto;padding:0 56px 100px}
+
+/* Section titles */
+.sec{margin-bottom:56px}
+.sec-title{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#B5A99A;margin-bottom:24px;padding-bottom:10px;border-bottom:1px solid #E8E3DB}
+
+/* Direction cards */
+.dir-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:16px}
+
+.dir-card{background:#fff;border-radius:16px;padding:32px;position:relative;border:2px solid transparent;transition:border-color .2s}
+.dir-card:hover{border-color:#D4A843}
+.dir-card .dir-tag{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#B5A99A;margin-bottom:8px}
+.dir-card h3{font-size:22px;font-weight:400;margin-bottom:4px}
+.dir-card .dir-desc{font-size:12px;color:#8A8477;line-height:1.5}
+
+/* Palettes */
+.palette-row{display:flex;gap:6px;margin-top:20px}
+.sw{flex:1;text-align:center}
+.sw-box{aspect-ratio:1;border-radius:8px;margin-bottom:4px}
+.sw-name{font-size:9px;color:#8A8477}
+
+/* Logo options grid */
+.logo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.logo-option{background:#fff;border-radius:16px;padding:36px 28px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:180px;border:2px solid transparent;transition:all .2s;cursor:default}
+.logo-option:hover{border-color:#D4A843;transform:translateY(-2px)}
+.logo-option .opt-label{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#B5A99A;margin-top:16px}
+
+/* Element options */
+.el-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.el-card{background:#fff;border-radius:16px;padding:28px;border:2px solid transparent;transition:all .2s}
+.el-card:hover{border-color:#D4A843}
+.el-label{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#B5A99A;margin-bottom:16px}
+
+/* Buttons showcase */
+.btn-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.btn-sample{padding:10px 24px;border-radius:8px;font-size:13px;font-family:'DM Sans',sans-serif;cursor:default;transition:all .15s;border:none}
+
+/* Product cards */
+.product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.prod-card{background:#fff;border-radius:14px;overflow:hidden;border:2px solid transparent;transition:all .2s}
+.prod-card:hover{border-color:#D4A843}
+.prod-img{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:32px}
+.prod-info{padding:16px}
+.prod-name{font-size:13px;font-weight:500;margin-bottom:4px}
+.prod-price{font-size:13px;color:#8A8477}
+.prod-btn{width:100%;padding:10px;border:none;border-radius:8px;font-size:12px;font-family:'DM Sans',sans-serif;cursor:default;margin-top:10px}
+
+/* Nav options */
+.nav-option{background:#fff;border-radius:14px;padding:16px 28px;display:flex;align-items:center;gap:20px;margin-bottom:12px;border:2px solid transparent;transition:all .2s}
+.nav-option:hover{border-color:#D4A843}
+.nav-links{display:flex;gap:24px;font-size:13px;color:#6B5B4E}
+.nav-logo-text{font-weight:500;font-size:18px}
+.nav-icons{margin-left:auto;display:flex;gap:16px}
+
+/* Type pairings */
+.type-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.type-card{background:#fff;border-radius:16px;padding:32px;border:2px solid transparent;transition:all .2s}
+.type-card:hover{border-color:#D4A843}
+.type-card .heading-sample{font-size:28px;margin-bottom:8px;color:#2C2824;line-height:1.2}
+.type-card .body-sample{font-size:13px;color:#8A8477;line-height:1.6}
+.type-card .type-name{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#B5A99A;margin-top:16px}
+
+/* Icon style options */
+.icon-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.icon-card{background:#fff;border-radius:14px;padding:24px;text-align:center;border:2px solid transparent;transition:all .2s}
+.icon-card:hover{border-color:#D4A843}
+.icon-card svg{margin-bottom:10px}
+.icon-card .icon-name{font-size:10px;color:#8A8477}
+
+/* Footer strip */
+.footer-strip{background:#2C2824;color:#C8BFB0;border-radius:16px;padding:28px 36px;font-size:13px;line-height:1.6;margin-top:56px;display:flex;justify-content:space-between;align-items:center}
+.footer-strip strong{color:#F5F0E8}
+
+@media(max-width:900px){
+  .page-head{padding:40px 24px 32px;flex-direction:column;align-items:flex-start;gap:12px}
+  .page-head h1{font-size:32px}
+  .wrap{padding:0 24px 60px}
+  .dir-row,.logo-grid,.type-grid{grid-template-columns:1fr}
+  .el-grid{grid-template-columns:1fr}
+  .product-grid{grid-template-columns:repeat(2,1fr)}
+  .icon-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+
+<header class="page-head">
+  <div>
+    <h1>fresca</h1>
+    <div style="font-size:13px;color:#8A8477;margin-top:6px">Explorare direcții de brand și sistem de design</div>
+  </div>
+  <div class="meta">
+    Aprilie 2026<br>
+    E-commerce · Materiale de frescă
+  </div>
+</header>
+
+<div class="wrap">
+
+<!-- 1. DIRECTII -->
+<div class="sec">
+<div class="sec-title">Direcții de brand</div>
+<div class="dir-row">
+  <div class="dir-card">
+    <div class="dir-tag">Direcția A</div>
+    <h3 style="font-family:'Libre Baskerville',serif">Atelier</h3>
+    <div class="dir-desc">Cald, intim, ca un atelier de pictor</div>
+    <div class="palette-row">
+      <div class="sw"><div class="sw-box" style="background:#F5F0E8"></div><div class="sw-name">tencuială</div></div>
+      <div class="sw"><div class="sw-box" style="background:#C8A55A"></div><div class="sw-name">ocru</div></div>
+      <div class="sw"><div class="sw-box" style="background:#B5513A"></div><div class="sw-name">terra rossa</div></div>
+      <div class="sw"><div class="sw-box" style="background:#6B5B4E"></div><div class="sw-name">umbră</div></div>
+      <div class="sw"><div class="sw-box" style="background:#2C2824"></div><div class="sw-name">cărbune</div></div>
+      <div class="sw"><div class="sw-box" style="background:#D4A843;border:1px solid #BF9735"></div><div class="sw-name">aur</div></div>
+    </div>
+  </div>
+  <div class="dir-card">
+    <div class="dir-tag">Direcția B</div>
+    <h3 style="font-family:'DM Sans',sans-serif;font-weight:500">Pigment</h3>
+    <div class="dir-desc">Onest, terestru, condus de materiale</div>
+    <div class="palette-row">
+      <div class="sw"><div class="sw-box" style="background:#F2EDE4"></div><div class="sw-name">var</div></div>
+      <div class="sw"><div class="sw-box" style="background:#7B8E65"></div><div class="sw-name">terra verde</div></div>
+      <div class="sw"><div class="sw-box" style="background:#C45538"></div><div class="sw-name">sinopia</div></div>
+      <div class="sw"><div class="sw-box" style="background:#D4A843"></div><div class="sw-name">ocru galben</div></div>
+      <div class="sw"><div class="sw-box" style="background:#3B5E8C"></div><div class="sw-name">ultramarin</div></div>
+      <div class="sw"><div class="sw-box" style="background:#3A3330"></div><div class="sw-name">negru viță</div></div>
+    </div>
+  </div>
+  <div class="dir-card">
+    <div class="dir-tag">Direcția C</div>
+    <h3 style="font-family:'Cormorant Garamond',serif">Volta</h3>
+    <div class="dir-desc">Arhitectural, sacru, inspirat de mănăstiri</div>
+    <div class="palette-row">
+      <div class="sw"><div class="sw-box" style="background:#EFEBE3"></div><div class="sw-name">calcar</div></div>
+      <div class="sw"><div class="sw-box" style="background:#B8A88E"></div><div class="sw-name">gresie</div></div>
+      <div class="sw"><div class="sw-box" style="background:#2D5A7B"></div><div class="sw-name">voroneț</div></div>
+      <div class="sw"><div class="sw-box" style="background:#8B3A3A"></div><div class="sw-name">roșu frescă</div></div>
+      <div class="sw"><div class="sw-box" style="background:#D4A843"></div><div class="sw-name">gilt</div></div>
+      <div class="sw"><div class="sw-box" style="background:#1E1E1E"></div><div class="sw-name">funingine</div></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- 2. OPȚIUNI LOGO -->
+<div class="sec">
+<div class="sec-title">Opțiuni logo</div>
+<div class="logo-grid">
+
+  <!-- Logo 1: Arch + wordmark serif -->
+  <div class="logo-option" style="background:#EFEBE3">
+    <div style="display:flex;align-items:center;gap:14px">
+      <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
+        <path d="M5 46L5 20Q5 3 25 3Q45 3 45 20L45 46" fill="none" stroke="#2D5A7B" stroke-width="2.2"/>
+        <line x1="25" y1="16" x2="25" y2="34" stroke="#D4A843" stroke-width="1.5"/>
+        <line x1="16" y1="25" x2="34" y2="25" stroke="#D4A843" stroke-width="1.5"/>
+      </svg>
+      <div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:32px;letter-spacing:3px;color:#1E1E1E">fresca</div>
+      </div>
+    </div>
+    <div class="opt-label">Arc + serif</div>
+  </div>
+
+  <!-- Logo 2: Mortar + sans caps -->
+  <div class="logo-option" style="background:#F2EDE4">
+    <div style="display:flex;align-items:center;gap:14px">
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+        <ellipse cx="22" cy="30" rx="18" ry="12" fill="#C45538" opacity="0.85"/>
+        <ellipse cx="22" cy="27" rx="13" ry="7" fill="#F2EDE4"/>
+        <line x1="31" y1="18" x2="40" y2="7" stroke="#3A3330" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="41" cy="6" r="3" fill="#3A3330"/>
+      </svg>
+      <div>
+        <div style="font-family:'DM Sans',sans-serif;font-size:26px;font-weight:500;letter-spacing:2px;color:#3A3330">FRESCA</div>
+      </div>
+    </div>
+    <div class="opt-label">Mojar + sans</div>
+  </div>
+
+  <!-- Logo 3: Trowel + serif -->
+  <div class="logo-option" style="background:#F5F0E8">
+    <div style="display:flex;align-items:center;gap:14px">
+      <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+        <path d="M6 36L6 16Q6 6 18 6L28 6Q34 6 34 14L34 18L16 18L16 36Z" fill="#B5513A" opacity="0.9"/>
+        <path d="M16 18L16 36L18 36L18 20L34 20L34 18Z" fill="#8A3A27"/>
+      </svg>
+      <div>
+        <div style="font-family:'Libre Baskerville',serif;font-size:30px;letter-spacing:2px;color:#2C2824">fresca</div>
+      </div>
+    </div>
+    <div class="opt-label">Mistrie + serif</div>
+  </div>
+
+  <!-- Logo 4: Arch standalone minimal -->
+  <div class="logo-option" style="background:#EFEBE3">
+    <div style="text-align:center">
+      <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
+        <path d="M10 50L10 24Q10 4 28 4Q46 4 46 24L46 50" fill="none" stroke="#8B3A3A" stroke-width="2"/>
+        <circle cx="28" cy="28" r="4" fill="#D4A843"/>
+      </svg>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:20px;letter-spacing:5px;color:#1E1E1E;margin-top:6px">FRESCA</div>
+    </div>
+    <div class="opt-label">Arc minimal</div>
+  </div>
+
+  <!-- Logo 5: Pigment circle + wordmark -->
+  <div class="logo-option" style="background:#F2EDE4">
+    <div style="display:flex;align-items:center;gap:16px">
+      <div style="position:relative;width:48px;height:48px">
+        <div style="position:absolute;width:28px;height:28px;border-radius:50%;background:#C45538;top:0;left:4"></div>
+        <div style="position:absolute;width:28px;height:28px;border-radius:50%;background:#7B8E65;opacity:0.8;top:6;left:18"></div>
+        <div style="position:absolute;width:28px;height:28px;border-radius:50%;background:#D4A843;opacity:0.75;top:18;left:10"></div>
+      </div>
+      <div style="font-family:'Playfair Display',serif;font-size:28px;color:#3A3330;letter-spacing:1px">fresca</div>
+    </div>
+    <div class="opt-label">Pigmenți + playfair</div>
+  </div>
+
+  <!-- Logo 6: Brush stroke + clean -->
+  <div class="logo-option" style="background:#F5F0E8">
+    <div style="text-align:center">
+      <svg width="120" height="12" viewBox="0 0 120 12" fill="none">
+        <path d="M2 8Q20 2 40 6Q60 10 80 4Q100 0 118 6" stroke="#B5513A" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.6"/>
+      </svg>
+      <div style="font-family:'Lora',serif;font-size:30px;color:#2C2824;letter-spacing:2px;margin-top:4px">fresca</div>
+      <svg width="120" height="8" viewBox="0 0 120 8" fill="none">
+        <path d="M2 4Q30 1 60 4Q90 7 118 4" stroke="#D4A843" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.5"/>
+      </svg>
+    </div>
+    <div class="opt-label">Pensulă + lora</div>
+  </div>
+
+</div>
+</div>
+
+<!-- 3. TIPOGRAFIE -->
+<div class="sec">
+<div class="sec-title">Combinații tipografice</div>
+<div class="type-grid">
+  <div class="type-card">
+    <div class="heading-sample" style="font-family:'Cormorant Garamond',serif;font-weight:400">Pigmenți naturali de frescă</div>
+    <div class="body-sample">Materiale autentice pentru restaurare și pictură murală, selectate cu grijă.</div>
+    <div class="type-name">Cormorant + DM Sans</div>
+  </div>
+  <div class="type-card">
+    <div class="heading-sample" style="font-family:'Libre Baskerville',serif;font-weight:400">Pigmenți naturali de frescă</div>
+    <div class="body-sample">Materiale autentice pentru restaurare și pictură murală, selectate cu grijă.</div>
+    <div class="type-name">Libre Baskerville + DM Sans</div>
+  </div>
+  <div class="type-card">
+    <div class="heading-sample" style="font-family:'Playfair Display',serif;font-weight:400">Pigmenți naturali de frescă</div>
+    <div class="body-sample">Materiale autentice pentru restaurare și pictură murală, selectate cu grijă.</div>
+    <div class="type-name">Playfair + DM Sans</div>
+  </div>
+  <div class="type-card">
+    <div class="heading-sample" style="font-family:'Lora',serif;font-weight:400">Pigmenți naturali de frescă</div>
+    <div class="body-sample">Materiale autentice pentru restaurare și pictură murală, selectate cu grijă.</div>
+    <div class="type-name">Lora + DM Sans</div>
+  </div>
+  <div class="type-card">
+    <div class="heading-sample" style="font-family:'Source Serif 4',serif;font-weight:400">Pigmenți naturali de frescă</div>
+    <div class="body-sample">Materiale autentice pentru restaurare și pictură murală, selectate cu grijă.</div>
+    <div class="type-name">Source Serif + DM Sans</div>
+  </div>
+  <div class="type-card">
+    <div class="heading-sample" style="font-family:'DM Sans',sans-serif;font-weight:500">Pigmenți naturali de frescă</div>
+    <div class="body-sample" style="font-family:'DM Sans',sans-serif">Materiale autentice pentru restaurare și pictură murală, selectate cu grijă.</div>
+    <div class="type-name">DM Sans (doar sans)</div>
+  </div>
+</div>
+</div>
+
+<!-- 4. BUTOANE -->
+<div class="sec">
+<div class="sec-title">Stiluri de butoane</div>
+<div class="el-grid">
+  <div class="el-card">
+    <div class="el-label">Varianta caldă (Atelier)</div>
+    <div class="btn-row">
+      <div class="btn-sample" style="background:#B5513A;color:#fff;border-radius:8px">Adaugă în coș</div>
+      <div class="btn-sample" style="background:transparent;color:#B5513A;border:1.5px solid #B5513A;border-radius:8px">Vezi detalii</div>
+      <div class="btn-sample" style="background:#F5F0E8;color:#6B5B4E;border-radius:8px">Filtre</div>
+    </div>
+    <div style="margin-top:14px">
+      <div class="btn-row">
+        <div class="btn-sample" style="background:#2C2824;color:#F5F0E8;border-radius:24px">Adaugă în coș</div>
+        <div class="btn-sample" style="background:transparent;color:#2C2824;border:1.5px solid #2C2824;border-radius:24px">Vezi detalii</div>
+      </div>
+    </div>
+  </div>
+  <div class="el-card">
+    <div class="el-label">Varianta arhitecturală (Volta)</div>
+    <div class="btn-row">
+      <div class="btn-sample" style="background:#2D5A7B;color:#fff;border-radius:4px">Adaugă în coș</div>
+      <div class="btn-sample" style="background:transparent;color:#2D5A7B;border:1.5px solid #2D5A7B;border-radius:4px">Vezi detalii</div>
+      <div class="btn-sample" style="background:#EFEBE3;color:#6B5B4E;border-radius:4px">Filtre</div>
+    </div>
+    <div style="margin-top:14px">
+      <div class="btn-row">
+        <div class="btn-sample" style="background:#8B3A3A;color:#fff;border-radius:0">Adaugă în coș</div>
+        <div class="btn-sample" style="background:transparent;color:#8B3A3A;border:1.5px solid #8B3A3A;border-radius:0">Vezi detalii</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- 5. CARDURI PRODUS -->
+<div class="sec">
+<div class="sec-title">Carduri de produs</div>
+<div class="product-grid">
+  <!-- Style A: Warm -->
+  <div class="prod-card">
+    <div class="prod-img" style="background:#F5F0E8">
+      <svg width="60" height="60" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="#C45538" opacity="0.7"/><circle cx="30" cy="30" r="14" fill="#D4A843" opacity="0.5"/></svg>
+    </div>
+    <div class="prod-info">
+      <div class="prod-name" style="font-family:'Libre Baskerville',serif;font-weight:400">Ocru Românesc</div>
+      <div class="prod-price">42 RON · 100g</div>
+      <div class="prod-btn" style="background:#B5513A;color:#fff;border-radius:8px">Adaugă în coș</div>
+    </div>
+  </div>
+  <!-- Style B: Clean -->
+  <div class="prod-card">
+    <div class="prod-img" style="background:#F2EDE4">
+      <svg width="60" height="60" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="#7B8E65" opacity="0.7"/><circle cx="30" cy="30" r="14" fill="#F2EDE4" opacity="0.6"/></svg>
+    </div>
+    <div class="prod-info">
+      <div class="prod-name">Terra Verde</div>
+      <div class="prod-price">38 RON · 100g</div>
+      <div class="prod-btn" style="background:#3A3330;color:#fff;border-radius:6px">Adaugă în coș</div>
+    </div>
+  </div>
+  <!-- Style C: Architectural -->
+  <div class="prod-card">
+    <div class="prod-img" style="background:#EFEBE3">
+      <svg width="60" height="60" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="#2D5A7B" opacity="0.7"/><circle cx="30" cy="30" r="14" fill="#D4A843" opacity="0.5"/></svg>
+    </div>
+    <div class="prod-info">
+      <div class="prod-name" style="font-family:'Cormorant Garamond',serif;font-size:15px">Ultramarin Natural</div>
+      <div class="prod-price">65 RON · 100g</div>
+      <div class="prod-btn" style="background:#2D5A7B;color:#fff;border-radius:4px">Adaugă în coș</div>
+    </div>
+  </div>
+  <!-- Style D: Minimal -->
+  <div class="prod-card">
+    <div class="prod-img" style="background:#F7F4EF">
+      <svg width="60" height="60" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="#D4A843" opacity="0.6"/><circle cx="30" cy="30" r="14" fill="#B5513A" opacity="0.4"/></svg>
+    </div>
+    <div class="prod-info">
+      <div class="prod-name">Sinopia</div>
+      <div class="prod-price">45 RON · 100g</div>
+      <div class="prod-btn" style="background:transparent;color:#2C2824;border:1.5px solid #2C2824;border-radius:24px">Adaugă în coș</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- 6. NAVIGARE -->
+<div class="sec">
+<div class="sec-title">Opțiuni de navigare</div>
+
+<div class="nav-option">
+  <div class="nav-logo-text" style="font-family:'Cormorant Garamond',serif;letter-spacing:2px">fresca</div>
+  <div class="nav-links">
+    <span>Pigmenți</span><span>Foiță de aur</span><span>Pensule</span><span>Despre noi</span>
+  </div>
+  <div class="nav-icons">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B5B4E" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><line x1="16" y1="16" x2="21" y2="21"/></svg>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B5B4E" stroke-width="1.5"><path d="M12 21C12 21 3 13.5 3 8.5C3 5.4 5.4 3 8.5 3C10.2 3 11.7 3.8 12 5C12.3 3.8 13.8 3 15.5 3C18.6 3 21 5.4 21 8.5C21 13.5 12 21 12 21Z"/></svg>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B5B4E" stroke-width="1.5"><path d="M6 2L3 6V20C3 21.1 3.9 22 5 22H19C20.1 22 21 21.1 21 20V6L18 2H6Z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10C16 12.2 14.2 14 12 14C9.8 14 8 12.2 8 10"/></svg>
+  </div>
+</div>
+
+<div class="nav-option" style="background:#2C2824">
+  <div class="nav-logo-text" style="font-family:'Libre Baskerville',serif;letter-spacing:1px;color:#F5F0E8">fresca</div>
+  <div class="nav-links" style="color:#B5A99A">
+    <span>Pigmenți</span><span>Foiță de aur</span><span>Pensule</span><span>Despre noi</span>
+  </div>
+  <div class="nav-icons">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B5A99A" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><line x1="16" y1="16" x2="21" y2="21"/></svg>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B5A99A" stroke-width="1.5"><path d="M12 21C12 21 3 13.5 3 8.5C3 5.4 5.4 3 8.5 3C10.2 3 11.7 3.8 12 5C12.3 3.8 13.8 3 15.5 3C18.6 3 21 5.4 21 8.5C21 13.5 12 21 12 21Z"/></svg>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B5A99A" stroke-width="1.5"><path d="M6 2L3 6V20C3 21.1 3.9 22 5 22H19C20.1 22 21 21.1 21 20V6L18 2H6Z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10C16 12.2 14.2 14 12 14C9.8 14 8 12.2 8 10"/></svg>
+  </div>
+</div>
+
+<div class="nav-option">
+  <svg width="28" height="28" viewBox="0 0 50 50" fill="none">
+    <path d="M5 46L5 20Q5 3 25 3Q45 3 45 20L45 46" fill="none" stroke="#2D5A7B" stroke-width="2"/>
+    <line x1="25" y1="16" x2="25" y2="34" stroke="#D4A843" stroke-width="1.2"/>
+    <line x1="16" y1="25" x2="34" y2="25" stroke="#D4A843" stroke-width="1.2"/>
+  </svg>
+  <div class="nav-logo-text" style="font-family:'Cormorant Garamond',serif;letter-spacing:3px">fresca</div>
+  <div class="nav-links">
+    <span>Pigmenți</span><span>Foiță de aur</span><span>Pensule</span><span>Despre noi</span>
+  </div>
+  <div class="nav-icons">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B5B4E" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><line x1="16" y1="16" x2="21" y2="21"/></svg>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B5B4E" stroke-width="1.5"><path d="M12 21C12 21 3 13.5 3 8.5C3 5.4 5.4 3 8.5 3C10.2 3 11.7 3.8 12 5C12.3 3.8 13.8 3 15.5 3C18.6 3 21 5.4 21 8.5C21 13.5 12 21 12 21Z"/></svg>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B5B4E" stroke-width="1.5"><path d="M6 2L3 6V20C3 21.1 3.9 22 5 22H19C20.1 22 21 21.1 21 20V6L18 2H6Z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10C16 12.2 14.2 14 12 14C9.8 14 8 12.2 8 10"/></svg>
+  </div>
+</div>
+</div>
+
+<!-- 7. ICONURI -->
+<div class="sec">
+<div class="sec-title">Stil iconițe</div>
+<div class="icon-grid">
+  <div class="icon-card">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2C2824" stroke-width="1.2">
+      <circle cx="11" cy="11" r="7"/><line x1="16" y1="16" x2="21" y2="21"/>
+    </svg>
+    <div class="icon-name">Căutare</div>
+  </div>
+  <div class="icon-card">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2C2824" stroke-width="1.2">
+      <path d="M12 21C12 21 3 13.5 3 8.5C3 5.4 5.4 3 8.5 3C10.2 3 11.7 3.8 12 5C12.3 3.8 13.8 3 15.5 3C18.6 3 21 5.4 21 8.5C21 13.5 12 21 12 21Z"/>
+    </svg>
+    <div class="icon-name">Favorite</div>
+  </div>
+  <div class="icon-card">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2C2824" stroke-width="1.2">
+      <path d="M6 2L3 6V20C3 21.1 3.9 22 5 22H19C20.1 22 21 21.1 21 20V6L18 2H6Z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10C16 12.2 14.2 14 12 14C9.8 14 8 12.2 8 10"/>
+    </svg>
+    <div class="icon-name">Coș</div>
+  </div>
+  <div class="icon-card">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2C2824" stroke-width="1.2">
+      <path d="M20 21V19C20 16.8 18.2 15 16 15H8C5.8 15 4 16.8 4 19V21"/><circle cx="12" cy="7" r="4"/>
+    </svg>
+    <div class="icon-name">Cont</div>
+  </div>
+  <div class="icon-card">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2C2824" stroke-width="1.2">
+      <line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/>
+    </svg>
+    <div class="icon-name">Meniu</div>
+  </div>
+  <div class="icon-card">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2C2824" stroke-width="1.2">
+      <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>
+    </svg>
+    <div class="icon-name">Categorii</div>
+  </div>
+  <div class="icon-card">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2C2824" stroke-width="1.2">
+      <path d="M12 2L15.1 8.3L22 9.3L17 14.1L18.2 21L12 17.8L5.8 21L7 14.1L2 9.3L8.9 8.3Z"/>
+    </svg>
+    <div class="icon-name">Recenzii</div>
+  </div>
+  <div class="icon-card">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2C2824" stroke-width="1.2">
+      <path d="M21 15C21 15.5 20.8 16 20.4 16.4C20 16.8 19.5 17 19 17H7L3 21V5C3 4.5 3.2 4 3.6 3.6C4 3.2 4.5 3 5 3H19C19.5 3 20 3.2 20.4 3.6C20.8 4 21 4.5 21 5V15Z"/>
+    </svg>
+    <div class="icon-name">Contact</div>
+  </div>
+</div>
+</div>
+
+<!-- Footer -->
+<div class="footer-strip">
+  <div><strong>Următorul pas:</strong> Alege combinația preferată de logo + paletă + tipografie și construim sistemul complet.</div>
+  <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#D4A843;white-space:nowrap">Design · Maria</div>
+</div>
+
+</div>
+
+</body>
+</html>
