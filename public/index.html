@@ -299,74 +299,94 @@ a{color:inherit;text-decoration:none}
       </div>
     </div>
     <div class="hero-illust">
-      <!-- Hero illustration: mortar, pestle, pigment piles -->
-      <svg width="340" height="340" viewBox="0 0 340 340" fill="none">
-        <!-- Background shapes -->
-        <circle cx="170" cy="170" r="150" fill="#F5F2EE" opacity="0.6"/>
-        <circle cx="170" cy="170" r="110" fill="#F0ECE6" opacity="0.4"/>
+      <svg width="380" height="380" viewBox="0 0 380 380" fill="none">
+        <!-- Arch structure -->
+        <path d="M60 350 L60 160 Q60 40 190 40 Q320 40 320 160 L320 350" fill="#F7F5F2" stroke="#E0DAD0" stroke-width="2"/>
+        <path d="M75 350 L75 165 Q75 55 190 55 Q305 55 305 165 L305 350" fill="#FDFCFA" stroke="#EAE5DC" stroke-width="1"/>
 
-        <!-- Pigment pile 1 - sinopia -->
-        <ellipse cx="110" cy="245" rx="45" ry="14" fill="#C45538" opacity="0.15"/>
-        <path d="M75 245 Q80 210 110 200 Q140 210 145 245 Z" fill="#C45538" opacity="0.8"/>
-        <path d="M85 245 Q90 218 110 210 Q130 218 135 245 Z" fill="#D4654A"/>
-        <path d="M95 240 Q100 225 110 220 Q120 225 125 240 Z" fill="#E0806A" opacity="0.6"/>
+        <!-- Fresco painting inside arch -->
+        <!-- Sky wash -->
+        <clipPath id="archClip"><path d="M80 350 L80 168 Q80 60 190 60 Q300 60 300 168 L300 350 Z"/></clipPath>
+        <g clip-path="url(#archClip)">
+          <!-- Sky gradient -->
+          <rect x="80" y="60" width="220" height="290" fill="url(#skyGrad)"/>
 
-        <!-- Pigment pile 2 - ultramarine -->
-        <ellipse cx="230" cy="250" rx="40" ry="12" fill="#3B5E8C" opacity="0.15"/>
-        <path d="M198 250 Q205 220 230 212 Q255 220 262 250 Z" fill="#3B5E8C" opacity="0.8"/>
-        <path d="M208 248 Q213 228 230 222 Q247 228 252 248 Z" fill="#4A72A0"/>
-        <path d="M218 244 Q222 234 230 230 Q238 234 242 244 Z" fill="#5B86B4" opacity="0.6"/>
+          <!-- Soft landscape washes — like actual fresco brushwork -->
+          <!-- Distant hills -->
+          <path d="M80 220 Q120 190 160 205 Q200 185 240 200 Q280 188 300 210 L300 260 L80 260 Z" fill="#7B8E65" opacity="0.2"/>
+          <path d="M80 235 Q130 210 170 225 Q210 205 250 218 Q290 208 300 228 L300 270 L80 270 Z" fill="#7B8E65" opacity="0.15"/>
 
-        <!-- Pigment pile 3 - ochre -->
-        <ellipse cx="170" cy="265" rx="50" ry="15" fill="#D4A843" opacity="0.15"/>
-        <path d="M130 265 Q138 228 170 218 Q202 228 210 265 Z" fill="#D4A843" opacity="0.8"/>
-        <path d="M142 262 Q148 235 170 227 Q192 235 198 262 Z" fill="#E0BC5C"/>
-        <path d="M152 258 Q158 242 170 236 Q182 242 188 258 Z" fill="#EBCE78" opacity="0.6"/>
+          <!-- Warm earth -->
+          <path d="M80 260 Q140 245 190 255 Q240 248 300 258 L300 350 L80 350 Z" fill="#D4A843" opacity="0.12"/>
 
-        <!-- Mortar bowl -->
-        <ellipse cx="170" cy="180" rx="62" ry="18" fill="#C8BFB0" opacity="0.3"/>
-        <path d="M108 168 Q108 130 170 120 Q232 130 232 168 L228 182 Q228 196 170 202 Q112 196 112 182 Z" fill="#E8E2D8" stroke="#D0C8BC" stroke-width="1.5"/>
-        <ellipse cx="170" cy="168" rx="58" ry="16" fill="#F0ECE6"/>
-        <ellipse cx="170" cy="166" rx="48" ry="12" fill="#E8E2D8"/>
-        <!-- Pigment inside mortar -->
-        <ellipse cx="170" cy="167" rx="36" ry="9" fill="#C45538" opacity="0.5"/>
-        <ellipse cx="165" cy="166" rx="20" ry="6" fill="#C45538" opacity="0.35"/>
+          <!-- Brush strokes — sinopia -->
+          <path d="M120 140 Q140 130 155 140 Q165 148 175 138 Q188 128 200 140" stroke="#C45538" stroke-width="12" stroke-linecap="round" fill="none" opacity="0.25"/>
+          <path d="M130 155 Q150 148 168 158 Q182 165 200 152" stroke="#C45538" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.15"/>
 
-        <!-- Pestle -->
-        <path d="M210 145 L240 90" stroke="#D0C8BC" stroke-width="10" stroke-linecap="round"/>
-        <path d="M210 145 L240 90" stroke="#E8E2D8" stroke-width="7" stroke-linecap="round"/>
-        <ellipse cx="243" cy="86" rx="8" ry="10" fill="#D0C8BC" transform="rotate(-25 243 86)"/>
-        <ellipse cx="208" cy="148" rx="10" ry="7" fill="#D0C8BC" transform="rotate(-25 208 148)"/>
+          <!-- Brush strokes — ultramarine -->
+          <path d="M160 100 Q185 88 210 100 Q230 110 255 98" stroke="#3B5E8C" stroke-width="14" stroke-linecap="round" fill="none" opacity="0.2"/>
+          <path d="M175 118 Q195 108 220 115 Q240 122 258 112" stroke="#3B5E8C" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.12"/>
 
-        <!-- Small scattered particles -->
-        <circle cx="90" cy="230" r="2" fill="#C45538" opacity="0.4"/>
-        <circle cx="145" cy="242" r="1.5" fill="#C45538" opacity="0.3"/>
-        <circle cx="250" cy="238" r="2" fill="#3B5E8C" opacity="0.4"/>
-        <circle cx="195" cy="255" r="1.5" fill="#D4A843" opacity="0.4"/>
-        <circle cx="140" cy="258" r="1" fill="#D4A843" opacity="0.3"/>
-        <circle cx="210" cy="260" r="1.5" fill="#D4A843" opacity="0.3"/>
-        <circle cx="260" cy="245" r="1" fill="#3B5E8C" opacity="0.3"/>
+          <!-- Brush strokes — ochre -->
+          <path d="M100 180 Q130 168 160 178 Q185 185 210 172 Q235 165 260 178" stroke="#D4A843" stroke-width="10" stroke-linecap="round" fill="none" opacity="0.22"/>
 
-        <!-- Gold leaf square floating -->
-        <rect x="60" y="85" width="40" height="40" rx="2" fill="url(#goldGrad)" opacity="0.7" transform="rotate(-12 80 105)"/>
-        <rect x="63" y="88" width="34" height="34" rx="1" fill="none" stroke="#C9A84C" stroke-width="0.5" opacity="0.5" transform="rotate(-12 80 105)"/>
+          <!-- Brush strokes — terra verde -->
+          <path d="M110 200 Q135 192 155 202 Q175 210 200 198 Q225 190 250 202" stroke="#7B8E65" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.2"/>
 
-        <!-- Brush -->
-        <path d="M270 120 L290 60" stroke="#6B5B4E" stroke-width="4" stroke-linecap="round"/>
-        <path d="M270 120 L290 60" stroke="#8B7B6E" stroke-width="2.5" stroke-linecap="round"/>
-        <path d="M266 128 Q268 118 272 118 Q276 118 274 128 Z" fill="#C45538" opacity="0.7"/>
-        <ellipse cx="291" cy="57" rx="3" ry="5" fill="#D0C8BC" transform="rotate(-20 291 57)"/>
+          <!-- Gold leaf accent — small gilded area -->
+          <rect x="170" y="88" width="22" height="22" rx="1" fill="url(#goldGrad)" opacity="0.5"/>
+          <rect x="172" y="90" width="18" height="18" rx="0.5" fill="none" stroke="#DAC06A" stroke-width="0.4" opacity="0.6"/>
 
-        <!-- Terra verde small pile -->
-        <ellipse cx="65" cy="195" rx="20" ry="7" fill="#7B8E65" opacity="0.15"/>
-        <path d="M50 195 Q55 178 65 174 Q75 178 80 195 Z" fill="#7B8E65" opacity="0.6"/>
-        <path d="M55 193 Q58 182 65 179 Q72 182 75 193 Z" fill="#8BA075" opacity="0.5"/>
+          <!-- Subtle fresco texture dots -->
+          <circle cx="140" cy="120" r="1.5" fill="#C45538" opacity="0.15"/>
+          <circle cx="220" cy="140" r="2" fill="#3B5E8C" opacity="0.1"/>
+          <circle cx="180" cy="200" r="1.5" fill="#7B8E65" opacity="0.12"/>
+          <circle cx="250" cy="170" r="1" fill="#D4A843" opacity="0.15"/>
+          <circle cx="120" cy="190" r="1" fill="#C45538" opacity="0.1"/>
+        </g>
+
+        <!-- Arch keystone detail -->
+        <path d="M180 42 L190 32 L200 42" fill="none" stroke="#D0C8BC" stroke-width="1.5"/>
+
+        <!-- Column bases -->
+        <rect x="52" y="340" width="20" height="12" rx="2" fill="#EAE5DC" stroke="#D8D0C4" stroke-width="1"/>
+        <rect x="308" y="340" width="20" height="12" rx="2" fill="#EAE5DC" stroke="#D8D0C4" stroke-width="1"/>
+
+        <!-- Pigment bowls at base of arch -->
+        <!-- Bowl 1: Sinopia -->
+        <ellipse cx="110" cy="330" rx="18" ry="6" fill="#E0DAD0"/>
+        <path d="M92 326 Q92 316 110 314 Q128 316 128 326" fill="#EDEAE4" stroke="#D8D0C4" stroke-width="0.8"/>
+        <ellipse cx="110" cy="318" rx="15" ry="5" fill="#F2EFEA"/>
+        <ellipse cx="110" cy="317" rx="11" ry="3.5" fill="#C45538" opacity="0.7"/>
+
+        <!-- Bowl 2: Ultramarine -->
+        <ellipse cx="160" cy="338" rx="16" ry="5.5" fill="#E0DAD0"/>
+        <path d="M144 334 Q144 325 160 323 Q176 325 176 334" fill="#EDEAE4" stroke="#D8D0C4" stroke-width="0.8"/>
+        <ellipse cx="160" cy="327" rx="13" ry="4.5" fill="#F2EFEA"/>
+        <ellipse cx="160" cy="326" rx="10" ry="3" fill="#3B5E8C" opacity="0.7"/>
+
+        <!-- Bowl 3: Ochre -->
+        <ellipse cx="215" cy="336" rx="17" ry="5.5" fill="#E0DAD0"/>
+        <path d="M198 332 Q198 323 215 321 Q232 323 232 332" fill="#EDEAE4" stroke="#D8D0C4" stroke-width="0.8"/>
+        <ellipse cx="215" cy="325" rx="14" ry="4.5" fill="#F2EFEA"/>
+        <ellipse cx="215" cy="324" rx="10" ry="3" fill="#D4A843" opacity="0.7"/>
+
+        <!-- Bowl 4: Terra Verde -->
+        <ellipse cx="268" cy="330" rx="15" ry="5" fill="#E0DAD0"/>
+        <path d="M253 326 Q253 318 268 316 Q283 318 283 326" fill="#EDEAE4" stroke="#D8D0C4" stroke-width="0.8"/>
+        <ellipse cx="268" cy="320" rx="12" ry="4" fill="#F2EFEA"/>
+        <ellipse cx="268" cy="319" rx="9" ry="3" fill="#7B8E65" opacity="0.7"/>
 
         <defs>
           <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#E8D48B"/>
+            <stop offset="0%" stop-color="#EBD98F"/>
             <stop offset="50%" stop-color="#D4A843"/>
             <stop offset="100%" stop-color="#C49A38"/>
+          </linearGradient>
+          <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#E8EDF4" stop-opacity="0.5"/>
+            <stop offset="60%" stop-color="#F5F3EE" stop-opacity="0.3"/>
+            <stop offset="100%" stop-color="#F0ECE6" stop-opacity="0.2"/>
           </linearGradient>
         </defs>
       </svg>
