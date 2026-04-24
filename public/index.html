@@ -24,11 +24,13 @@ a{color:inherit;text-decoration:none}
 
 /* ── NAV ── */
 .nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
-.nav-inner{max-width:1200px;margin:0 auto;padding:0 32px;height:60px;display:flex;align-items:center;justify-content:space-between}
-.nav-left{display:flex;align-items:center;gap:40px}
-.nav-brand{font-family:'Playfair Display',serif;font-size:22px;font-weight:600;letter-spacing:0.5px;color:var(--text);cursor:pointer}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 32px;height:64px;display:flex;align-items:center;justify-content:space-between}
+.nav-left{display:flex;align-items:center;gap:32px}
+.nav-brand{display:flex;align-items:center;gap:10px;color:var(--text);cursor:pointer;text-decoration:none}
+.logo-mark{width:32px;height:32px;border-radius:8px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:18px;font-weight:600;font-style:italic}
+.nav-brand-name{font-family:'Playfair Display',serif;font-size:22px;font-weight:600;letter-spacing:0.5px}
 .nav-tabs{display:flex;gap:0}
-.nav-tabs a{padding:20px 16px;font-size:13px;font-weight:500;color:var(--text-mid);border-bottom:2px solid transparent;transition:all .15s;cursor:pointer}
+.nav-tabs a{padding:22px 12px;font-size:12.5px;font-weight:500;color:var(--text-mid);border-bottom:2px solid transparent;transition:all .15s;cursor:pointer;white-space:nowrap}
 .nav-tabs a:hover{color:var(--text)}
 .nav-tabs a.active{color:var(--accent);border-bottom-color:var(--accent)}
 .nav-right{display:flex;align-items:center;gap:16px}
@@ -178,6 +180,113 @@ a{color:inherit;text-decoration:none}
 .mobile-menu-links{padding:20px;display:flex;flex-direction:column}
 .mobile-menu-links a{padding:14px 0;font-size:16px;font-weight:500;color:var(--text);border-bottom:1px solid var(--border);cursor:pointer}
 
+/* ── WHATSAPP FLOAT ── */
+.wa-float{position:fixed;bottom:24px;right:24px;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,0.4);z-index:99;transition:transform .2s;text-decoration:none}
+.wa-float:hover{transform:scale(1.05)}
+.wa-float svg{color:#fff}
+
+/* ── QUOTE SECTION ── */
+.quote-section{background:#1A1A1A;color:#fff;padding:72px 48px;border-radius:14px;margin:40px 0;text-align:center;position:relative;overflow:hidden}
+.quote-section::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:60px;height:3px;background:var(--accent)}
+.quote-section .quote-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+.quote-section .quote-text{font-family:'Playfair Display',serif;font-size:28px;font-weight:400;font-style:italic;line-height:1.4;max-width:720px;margin:0 auto;color:#fff}
+.quote-section .quote-text span{color:var(--gold);font-weight:500}
+
+/* ── LAYOUT TOGGLE ── */
+.layout-toolbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;padding:12px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.layout-count{font-size:12px;color:var(--text-light)}
+.layout-toggles{display:flex;gap:4px;align-items:center}
+.layout-toggles span{font-size:11px;color:var(--text-light);margin-right:8px;letter-spacing:1px;text-transform:uppercase}
+.layout-btn{width:30px;height:30px;border:1px solid var(--border);background:#fff;border-radius:6px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text-mid);transition:all .15s;padding:0}
+.layout-btn:hover{border-color:var(--text)}
+.layout-btn.active{border-color:var(--accent);color:var(--accent);background:rgba(196,85,56,0.04)}
+
+.products.cols-1{grid-template-columns:1fr}
+.products.cols-2{grid-template-columns:repeat(2,1fr)}
+
+/* ── QUANTITY SELECTOR ── */
+.qty-selector{display:flex;align-items:center;gap:0;margin-bottom:10px;border:1px solid var(--border);border-radius:6px;overflow:hidden;background:#fff}
+.qty-btn{width:32px;height:34px;border:none;background:#fff;color:var(--text-mid);cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:background .15s;padding:0}
+.qty-btn:hover{background:var(--bg)}
+.qty-display{flex:1;text-align:center;font-size:13px;font-weight:500;padding:0 8px;border-left:1px solid var(--border);border-right:1px solid var(--border);height:34px;display:flex;align-items:center;justify-content:center;gap:4px}
+.qty-display span{color:var(--text-light);font-size:11px;font-weight:400}
+
+/* ── ACCOUNT PAGE ── */
+.account-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:32px;align-items:start}
+.account-form{background:#fff;border:1px solid var(--border);border-radius:10px;padding:32px}
+.account-form h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:500;margin-bottom:6px}
+.account-form p{font-size:13px;color:var(--text-light);margin-bottom:20px}
+.account-form .form-row{margin-bottom:14px}
+.account-form label{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--text-light);display:block;margin-bottom:5px}
+.account-form input{width:100%;padding:11px 14px;border:1px solid var(--border);border-radius:6px;font-size:14px;font-family:'DM Sans',sans-serif;outline:none;transition:border-color .15s}
+.account-form input:focus{border-color:var(--accent)}
+.account-form .form-actions{display:flex;justify-content:space-between;align-items:center;margin-top:20px}
+.account-form .form-link{font-size:12px;color:var(--accent);cursor:pointer}
+.account-form .form-link:hover{text-decoration:underline}
+
+.orders-panel{background:#fff;border:1px solid var(--border);border-radius:10px;padding:32px}
+.orders-panel h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:500;margin-bottom:6px}
+.orders-panel > p{font-size:13px;color:var(--text-light);margin-bottom:24px}
+.order-card{padding:18px 0;border-top:1px solid var(--border);display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center}
+.order-card:first-of-type{border-top:none;padding-top:0}
+.order-card .order-date{font-size:12px;color:var(--text-light)}
+.order-card .order-id{font-size:13px;font-weight:500;margin-bottom:2px}
+.order-card .order-items{font-size:12px;color:var(--text-mid)}
+.order-card .order-total{font-size:14px;font-weight:600;color:var(--accent)}
+.order-card .order-status{font-size:10px;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:4px;background:rgba(123,142,101,0.15);color:#5A6B48;display:inline-block;margin-top:3px}
+
+/* ── FRESCO INFO PAGE ── */
+.fresco-intro{background:#fff;border:1px solid var(--border);border-radius:14px;padding:48px;margin-bottom:28px;display:grid;grid-template-columns:2fr 1fr;gap:48px;align-items:center}
+.fresco-intro h2{font-family:'Playfair Display',serif;font-size:28px;font-weight:500;margin-bottom:14px;line-height:1.3}
+.fresco-intro p{font-size:14px;color:var(--text-mid);line-height:1.8}
+.fresco-intro img{width:100%;border-radius:10px;aspect-ratio:1;object-fit:cover}
+
+.fresco-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:28px}
+.fresco-step{background:#fff;border:1px solid var(--border);border-radius:10px;padding:24px;position:relative}
+.fresco-step .step-num{font-family:'Playfair Display',serif;font-size:36px;font-weight:500;color:var(--accent);opacity:0.3;position:absolute;top:12px;right:16px;line-height:1}
+.fresco-step h4{font-size:14px;font-weight:600;margin-bottom:8px;padding-right:40px}
+.fresco-step p{font-size:12px;color:var(--text-mid);line-height:1.6}
+
+.fresco-technique{background:#fff;border:1px solid var(--border);border-radius:14px;padding:40px;margin-bottom:28px}
+.fresco-technique h3{font-family:'Playfair Display',serif;font-size:22px;font-weight:500;margin-bottom:16px}
+.fresco-technique p{font-size:14px;color:var(--text-mid);line-height:1.8;margin-bottom:12px}
+.fresco-technique ul{list-style:none;padding:0;margin-top:16px}
+.fresco-technique li{padding:10px 0 10px 24px;font-size:13px;color:var(--text-mid);border-top:1px solid var(--border);position:relative}
+.fresco-technique li:first-child{border-top:none}
+.fresco-technique li::before{content:'→';position:absolute;left:0;color:var(--accent);font-weight:600}
+.fresco-technique li strong{color:var(--text);font-weight:600}
+
+.fresco-lead{background:linear-gradient(135deg,#1A1A1A 0%,#2A2825 100%);color:#fff;border-radius:14px;padding:56px 48px;margin-bottom:28px;position:relative;overflow:hidden}
+.fresco-lead::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--gold)}
+.fresco-lead .kicker{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.fresco-lead h2{font-family:'Playfair Display',serif;font-size:32px;font-weight:500;line-height:1.25;margin-bottom:20px;max-width:780px}
+.fresco-lead p{font-size:15px;line-height:1.85;color:rgba(255,255,255,0.78);max-width:820px;margin-bottom:14px}
+.fresco-lead p em{color:var(--gold);font-style:italic}
+
+.fresco-elements{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:28px}
+.fresco-element{background:#fff;border:1px solid var(--border);border-radius:12px;padding:28px;text-align:center}
+.fresco-element .el-symbol{width:56px;height:56px;border-radius:50%;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:24px;font-style:italic;font-weight:500;color:#fff}
+.fresco-element h4{font-family:'Playfair Display',serif;font-size:18px;font-weight:500;margin-bottom:6px}
+.fresco-element p{font-size:13px;color:var(--text-mid);line-height:1.7}
+
+.fresco-section{background:#fff;border:1px solid var(--border);border-radius:14px;padding:40px;margin-bottom:20px}
+.fresco-section .roman{font-family:'Playfair Display',serif;font-size:13px;color:var(--accent);letter-spacing:4px;margin-bottom:8px;font-weight:500}
+.fresco-section h3{font-family:'Playfair Display',serif;font-size:24px;font-weight:500;margin-bottom:16px;line-height:1.3}
+.fresco-section p{font-size:14px;color:var(--text-mid);line-height:1.8;margin-bottom:14px}
+.fresco-section p em{color:var(--text);font-style:italic}
+.fresco-section .detail{background:var(--bg);border-left:3px solid var(--accent);padding:16px 20px;border-radius:0 8px 8px 0;margin:14px 0;font-size:13.5px;line-height:1.75}
+.fresco-section .detail strong{color:var(--text);font-weight:600;display:block;margin-bottom:4px;font-size:13px}
+
+.chem-formula{background:#1A1A1A;color:#fff;border-radius:12px;padding:40px 32px;margin:20px 0;text-align:center;position:relative}
+.chem-formula .chem-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+.chem-formula .chem-eq{font-family:'Playfair Display',serif;font-size:32px;font-weight:400;font-style:italic;letter-spacing:1px}
+.chem-formula .chem-eq sub{font-size:18px;font-style:normal;vertical-align:sub}
+.chem-formula .chem-eq .arrow{color:var(--gold);margin:0 16px}
+.chem-formula .chem-caption{font-size:12px;color:rgba(255,255,255,0.55);margin-top:20px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.6}
+
+.fresco-outro{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:40px;margin-top:20px;text-align:center;font-family:'Playfair Display',serif;font-size:18px;font-style:italic;line-height:1.6;color:var(--text-mid)}
+.fresco-outro::before{content:'"';font-size:48px;color:var(--accent);opacity:0.4;line-height:0.5;display:block;margin-bottom:10px}
+
 /* ── FOOTER ── */
 .footer{background:#fff;border-top:1px solid var(--border);padding:40px 32px 24px;margin-top:auto}
 .footer-inner{max-width:1200px;margin:0 auto}
@@ -191,10 +300,26 @@ a{color:inherit;text-decoration:none}
 .footer-bottom{border-top:1px solid var(--border);padding-top:20px;font-size:11px;color:var(--text-light);display:flex;justify-content:space-between}
 
 /* ── RESPONSIVE ── */
+@media(max-width:1100px){
+  .nav-tabs a{padding:22px 10px;font-size:12px}
+}
 @media(max-width:900px){
   .nav-tabs{display:none}
   .nav-hamburger{display:block}
   .nav-inner{padding:0 16px}
+  .quote-section{padding:48px 28px}
+  .quote-section .quote-text{font-size:22px}
+  .account-grid{grid-template-columns:1fr}
+  .fresco-intro{grid-template-columns:1fr;padding:28px}
+  .fresco-steps{grid-template-columns:repeat(2,1fr)}
+  .fresco-elements{grid-template-columns:1fr}
+  .fresco-lead{padding:36px 24px}
+  .fresco-lead h2{font-size:24px}
+  .fresco-section{padding:28px}
+  .chem-formula{padding:28px 20px}
+  .chem-formula .chem-eq{font-size:22px}
+  .chem-formula .chem-eq .arrow{margin:0 8px}
+  .wa-float{bottom:16px;right:16px;width:52px;height:52px}
   .hero{grid-template-columns:1fr;padding:32px 16px;min-height:auto}
   .hero-text h1{font-size:32px}
   .hero-illust img{max-width:340px}
@@ -225,20 +350,25 @@ a{color:inherit;text-decoration:none}
 <nav class="nav">
   <div class="nav-inner">
     <div class="nav-left">
-      <div class="nav-brand" onclick="showPage('home')">Affresco</div>
+      <div class="nav-brand" onclick="showPage('home')">
+        <div class="logo-mark">A</div>
+        <div class="nav-brand-name">Affresco</div>
+      </div>
       <div class="nav-tabs" id="navTabs">
         <a class="active" onclick="showPage('home')">Acasă</a>
         <a onclick="showPage('pigmenti')">Pigmenți</a>
         <a onclick="showPage('foita')">Foiță de aur</a>
         <a onclick="showPage('pensule')">Pensule</a>
         <a onclick="showPage('materiale')">Materiale</a>
+        <a onclick="showPage('fresca')">Frescă</a>
         <a onclick="showPage('despre')">Despre</a>
       </div>
     </div>
     <div class="nav-right">
-      <button class="nav-icon" onclick="toggleSearch()"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><line x1="16" y1="16" x2="21" y2="21"/></svg></button>
-      <button class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21C12 21 3 13.5 3 8.5C3 5.4 5.4 3 8.5 3C10.2 3 11.7 3.8 12 5C12.3 3.8 13.8 3 15.5 3C18.6 3 21 5.4 21 8.5C21 13.5 12 21 12 21Z"/></svg></button>
-      <button class="nav-icon" onclick="toggleCart()">
+      <button class="nav-icon" onclick="toggleSearch()" title="Caută"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><line x1="16" y1="16" x2="21" y2="21"/></svg></button>
+      <button class="nav-icon" onclick="showPage('cont')" title="Contul meu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21V19C20 16.8 18.2 15 16 15H8C5.8 15 4 16.8 4 19V21"/><circle cx="12" cy="7" r="4"/></svg></button>
+      <button class="nav-icon" title="Favorite"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21C12 21 3 13.5 3 8.5C3 5.4 5.4 3 8.5 3C10.2 3 11.7 3.8 12 5C12.3 3.8 13.8 3 15.5 3C18.6 3 21 5.4 21 8.5C21 13.5 12 21 12 21Z"/></svg></button>
+      <button class="nav-icon" onclick="toggleCart()" title="Coș">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6V20C3 21.1 3.9 22 5 22H19C20.1 22 21 21.1 21 20V6L18 2H6Z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10C16 12.2 14.2 14 12 14C9.8 14 8 12.2 8 10"/></svg>
         <span class="cart-badge" id="cartCount">0</span>
       </button>
@@ -246,6 +376,11 @@ a{color:inherit;text-decoration:none}
     </div>
   </div>
 </nav>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/40700000000" target="_blank" class="wa-float" title="Contactează-ne pe WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-1s-.5-.1-.7.1-.8 1-.9 1.2-.3.2-.5.1c-.7-.4-1.5-.8-2.3-1.7-.6-.7-1.1-1.5-1.3-1.7s0-.4.1-.5.2-.3.4-.4.2-.3.3-.5 0-.3 0-.5-.7-1.6-.9-2.2-.4-.5-.7-.5h-.5c-.2 0-.5.1-.7.3s-.9.8-.9 2 .9 2.3 1 2.5 1.8 2.8 4.5 3.9c2.2.9 2.6.7 3.1.6s1.7-.7 1.9-1.3.2-1.2.2-1.3-.3-.2-.6-.3zM12 2a10 10 0 00-8.5 15.3L2 22l4.9-1.3A10 10 0 1012 2zm0 18.2a8.1 8.1 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1120.2 12a8.2 8.2 0 01-8.2 8.2z"/></svg>
+</a>
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
@@ -259,7 +394,9 @@ a{color:inherit;text-decoration:none}
     <a onclick="showPage('foita');toggleMobile()">Foiță de aur</a>
     <a onclick="showPage('pensule');toggleMobile()">Pensule</a>
     <a onclick="showPage('materiale');toggleMobile()">Materiale</a>
-    <a onclick="showPage('despre');toggleMobile()">Despre</a>
+    <a onclick="showPage('fresca');toggleMobile()">Despre frescă</a>
+    <a onclick="showPage('despre');toggleMobile()">Despre noi</a>
+    <a onclick="showPage('cont');toggleMobile()">Contul meu</a>
   </div>
 </div>
 
@@ -290,11 +427,11 @@ a{color:inherit;text-decoration:none}
 
   <div class="hero">
     <div class="hero-text">
-      <div class="section-label">Materiale autentice</div>
-      <h1>Pigmenți naturali <span>pentru pictură în frescă</span></h1>
-      <p>Pigmenți puri, foiță de aur 22K și materiale profesionale. Pentru artiști și restauratori.</p>
+      <div class="section-label">Materiale profesionale</div>
+      <h1>Sursa ta de materiale <span>pentru frescă autentică</span></h1>
+      <p>Totul pentru pictura în frescă — pigmenți naturali, foiță de aur și materiale selectate pentru lucrări care dăinuie.</p>
       <div class="hero-cta">
-        <a class="btn btn-primary" onclick="showPage('pigmenti')">Vezi pigmenții</a>
+        <a class="btn btn-primary" onclick="showPage('pigmenti')">Explorează produsele</a>
         <a class="btn btn-outline" onclick="showPage('despre')">Despre noi</a>
       </div>
     </div>
@@ -427,6 +564,12 @@ a{color:inherit;text-decoration:none}
       </div>
     </div>
 
+    <!-- Quote / Brand story -->
+    <div class="quote-section">
+      <div class="quote-label">Povestea din spatele peretelui</div>
+      <p class="quote-text">Fresca nu este doar pictură — este o legătură chimică între <span>pământ, apă și timp</span>.</p>
+    </div>
+
   </div>
 </div>
 
@@ -438,8 +581,19 @@ a{color:inherit;text-decoration:none}
   <div class="page-wrap">
     <div class="page-header">
       <h1>Pigmenți</h1>
-      <p>Pigmenți naturali pentru pictură în frescă</p>
+      <p>Pigmenți naturali și sintetici pentru pictură în frescă · preț per 1 kg, TVA inclusă</p>
     </div>
+
+    <div class="layout-toolbar">
+      <div class="layout-count" id="layoutCount"></div>
+      <div class="layout-toggles">
+        <span>Afișare</span>
+        <button class="layout-btn" onclick="setLayout(1)" title="1 pe rând"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/></svg></button>
+        <button class="layout-btn" onclick="setLayout(2)" title="2 pe rând"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="8" height="16" rx="1"/><rect x="13" y="4" width="8" height="16" rx="1"/></svg></button>
+        <button class="layout-btn active" onclick="setLayout(3)" title="3 pe rând"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="5" height="16" rx="1"/><rect x="9.5" y="4" width="5" height="16" rx="1"/><rect x="16" y="4" width="5" height="16" rx="1"/></svg></button>
+      </div>
+    </div>
+
     <div class="products" id="productGrid"></div>
   </div>
 </div>
@@ -570,10 +724,11 @@ a{color:inherit;text-decoration:none}
 
     <div class="about-top">
       <div class="about-text">
-        <h2>De ce Affresco?</h2>
-        <p>Affresco s-a născut din dorința de a pune la dispoziția pictorilor de frescă din România materiale autentice și de cea mai bună calitate.</p>
-        <p>Colaborăm cu furnizori de tradiție precum Giusto Manetti Battiloro pentru a vă oferi tot ce aveți nevoie — de la pigmenți naturali la foiță de aur de 22 de karate.</p>
-        <p>Fie că sunteți artist, restaurator sau student, veți găsi la noi materiale profesionale selectate cu grijă.</p>
+        <h2>Mai mult decât produse</h2>
+        <p>Affresco s-a născut dintr-o pasiune profundă pentru arta frescei și din respectul pentru tradițiile autentice care au dat viață unora dintre cele mai impresionante lucrări murale.</p>
+        <p>Pentru noi, fresca nu înseamnă doar tehnică, ci o formă de continuitate — o legătură între trecut și prezent, între meșteșug și expresie artistică. De aceea, aducem mai aproape de artiști materiale care păstrează esența acestei arte: pigmenți naturali, foiță de aur și produse atent selecționate, provenite de la furnizori consacrați.</p>
+        <p>Ne adresăm celor care caută mai mult decât materiale — celor care caută autenticitate, profunzime și excelență în fiecare detaliu. Fie că este vorba despre un spațiu sacru sau o lucrare personală, fiecare alegere devine parte dintr-o viziune care prinde viață.</p>
+        <p><em>Affresco înseamnă mai mult decât produse. Înseamnă încrederea că fiecare lucrare poate deveni durabilă, expresivă și atemporală — o formă de artă care nu doar se creează, ci se transmite mai departe.</em></p>
       </div>
       <div class="about-illust">
         <!-- Fresco wall/arch illustration -->
@@ -621,6 +776,217 @@ a{color:inherit;text-decoration:none}
 </div>
 
 
+<!-- ═══════════════════════════════════ -->
+<!-- PAGE: DESPRE FRESCĂ                -->
+<!-- ═══════════════════════════════════ -->
+<div class="page" id="page-fresca">
+  <div class="page-wrap">
+    <div class="page-header">
+      <h1>Tehnica frescei</h1>
+      <p>Arta și chimia peretelui · O alchimie minerală în tradiția bizantină</p>
+    </div>
+
+    <div class="fresco-lead">
+      <div class="kicker">Introducere</div>
+      <h2>Pictura „al fresco" nu este o simplă tehnică de înfrumusețare, ci un proces de transformare ontologică a materiei.</h2>
+      <p>În acest laborator viu al peretelui, varul stins încetează să mai fie un simplu liant de construcție, devenind, prin intervenția artistului și a legilor chimiei, o <em>capsulă a timpului</em>. Această alchimie minerală presupune o stăpânire absolută a etapelor, de la pregătirea suportului brut până la momentul critic al cristalizării carbonatului, totul subordonat canoanelor picturii bizantine.</p>
+      <p>Fresca este o simbioză perfectă între trei elemente fundamentale, o alchimie în care materia brută devine spirit.</p>
+    </div>
+
+    <div class="fresco-elements">
+      <div class="fresco-element">
+        <div class="el-symbol" style="background:#8B6D4A">P</div>
+        <h4>Pământ</h4>
+        <p>Oferă structura și stabilitatea prin oxizii minerali și varul extras din piatră.</p>
+      </div>
+      <div class="fresco-element">
+        <div class="el-symbol" style="background:#3B5E8C">A</div>
+        <h4>Apă</h4>
+        <p>Vehicul alchimic care poartă pigmenții în profunzimea rețelei moleculare a tencuielii.</p>
+      </div>
+      <div class="fresco-element">
+        <div class="el-symbol" style="background:#7B8E65">Aer</div>
+        <h4>Aer</h4>
+        <p>Desăvârșește procesul prin dioxidul de carbon ce declanșează reacția de carbonatare.</p>
+      </div>
+    </div>
+
+    <div class="fresco-section">
+      <div class="roman">I</div>
+      <h3>Arhitectura substratului: de la zidăria tradițională la betonul modern</h3>
+      <p>Totul începe sub suprafața vizibilă. Zidul trebuie pregătit ca un organism capabil să susțină viața culorii. În tradiția bizantină, suportul era piatra sau cărămida, însă astăzi, fresca se adaptează și suportului de beton.</p>
+      <div class="detail">
+        <strong>Provocarea betonului</strong>
+        Spre deosebire de cărămidă, betonul este un suport dens și mai puțin poros. Pentru ca alchimia frescei să funcționeze, betonul trebuie <em>buciardat</em> (asprit mecanic) pentru a crea o aderență fizică. De asemenea, trebuie tratat pentru a neutraliza eventualele substanțe de decofrare, asigurând o legătură chimică pură cu straturile de var.
+      </div>
+      <div class="detail">
+        <strong>Umezirea ritualică</strong>
+        Indiferent de material, peretele trebuie „băut" (udat) cu rigoare. Cărămida se udă de 5-6 ori, piatra de 2-3 ori, iar betonul trebuie saturat pentru a preveni „arderea" tencuielii. Această hidratare profundă asigură umiditatea necesară pentru ca reacțiile chimice de profunzime să nu fie întrerupte brusc.
+      </div>
+    </div>
+
+    <div class="fresco-section">
+      <div class="roman">II</div>
+      <h3>Arriccio: rezerva de umiditate și egalizarea</h3>
+      <p>Prima etapă, <em>arriccio</em>, este stratul de forță — o tencuială robustă formată din var stins și nisip de carieră cu granulație mare (uneori amestecat cu paie tocate).</p>
+      <p>Acest strat, cu o grosime între 2 și 7 cm, are rolul de a prelua neregularitățile zidului și de a asigura o rezervă de apă care va „hrăni" stratul final timp de ore întregi. În pictura bizantină, arriccio este lăsat rugos, zgâriat cu mistria, pentru a ancora mecanic stratul pictural final.</p>
+    </div>
+
+    <div class="fresco-section">
+      <div class="roman">III</div>
+      <h3>Secretul fibrelor: Intonaco și „armătura" din câlți</h3>
+      <p>Cea mai fascinantă etapă este realizarea <em>intonaco</em>-ului, stratul nobil pe care se va așterne chipul sfântului. Aici materialele devin mult mai fine, iar amestecul capătă proprietăți remarcabile prin adăugarea câlților.</p>
+      <div class="detail">
+        <strong>Rolul chimic și mecanic al câlților</strong>
+        Câlții (fibrele de in sau cânepă) sunt soluția de inginerie antică pentru stabilitatea peretelui. În mediul puternic alcalin al varului, aceste fibre vegetale formează o armătură tridimensională. Aceasta preia tensiunile de contracție ce apar în timpul evaporării apei, prevenind fenomenul de craclare (apariția fisurilor).
+      </div>
+      <div class="detail">
+        <strong>Omogenizarea pastei</strong>
+        Varul se strecoară printr-o sită deasă pentru a elimina „neghina" (granulele de var nestins). Proverbul vechilor zugravi bizantini — <em>„să-i pui chipul"</em> — se referă la momentul în care pasta de var și câlți ajunge la o consistență atât de fină și elastică, încât pare pregătită să primească viață.
+      </div>
+    </div>
+
+    <div class="fresco-section">
+      <div class="roman">IV</div>
+      <h3>Alchimia oxizilor: pigmenții minerali și rezistența alcalină</h3>
+      <p>În fresca bizantină, culoarea nu este doar estetică, ci și substanță minerală. Deoarece varul este o bază chimică extrem de caustică (pH ridicat), el ar distruge orice pigment organic. Din acest motiv, paleta bizantină se bazează pe oxizi metalici naturali:</p>
+      <div class="detail">
+        <strong>Oxizii de fier — ocruri, brune, roșu englez</strong>
+        Sunt fundamentul frescei. Aceste „pământuri" sunt oxizi de fier sub diverse forme de hidratare (Fe₂O₃). Sunt inerte chimic în contact cu varul, oferind stabilitatea cromatică ce durează secole.
+      </div>
+      <div class="detail">
+        <strong>Oxidul de mangan</strong>
+        Folosit pentru tonuri de brun închis și negru, oferind profunzime trăsăturilor.
+      </div>
+      <div class="detail">
+        <strong>Compatibilitatea moleculară</strong>
+        Acești pigmenți sunt, în esență, minerale similare cu structura zidului. Ei nu stau la suprafață, ci se contopesc cu suportul, fiind „înghițiți" de rețeaua de carbonat.
+      </div>
+    </div>
+
+    <div class="fresco-section">
+      <div class="roman">V</div>
+      <h3>Carbonatarea: momentul în care zidul devine piatră</h3>
+      <p>Esența frescei bizantine rezidă într-o reacție chimică elegantă — <em>Ciclul Varului</em>. Artistul lucrează într-o fereastră temporală îngustă, guvernată de legile naturii.</p>
+      <div class="detail">
+        <strong>Sclivisirea (netezirea)</strong>
+        Prin presarea tencuielii proaspete se produce o migrație moleculară. Hidroxidul de calciu este forțat să iasă la suprafață sub forma unui „lapte de var".
+      </div>
+      <p>Pe măsură ce apa se evaporă, dioxidul de carbon din aer intră în reacție cu varul umed:</p>
+
+      <div class="chem-formula">
+        <div class="chem-label">Reacția de carbonatare</div>
+        <div class="chem-eq">
+          Ca(OH)<sub>2</sub> + CO<sub>2</sub>
+          <span class="arrow">→</span>
+          CaCO<sub>3</sub> + H<sub>2</sub>O
+        </div>
+        <div class="chem-caption">Hidroxidul de calciu reacționează cu dioxidul de carbon din atmosferă și formează carbonat de calciu (calcit) și apă. Pigmenții nu mai rămân la suprafață — sunt înglobați în cristalele de calcit în formare.</div>
+      </div>
+
+      <div class="detail">
+        <strong>Cristalizarea</strong>
+        Rezultatul este carbonatul de calciu (calcitul). Particulele de pigment nu rămân la suprafață, ci sunt „înghițite" de cristalele de calcit în formare. Pictura nu mai este un strat aplicat — devine însăși fața minerală a zidului.
+      </div>
+    </div>
+
+    <div class="fresco-section">
+      <div class="roman">VI</div>
+      <h3>Disciplina timpului în pictura bizantină</h3>
+      <p>În tradiția post-bizantină, guvernată de <em>Erminii</em> precum cea a lui Dionisie din Furna, pictorul trebuie să fie un stăpân al momentului.</p>
+      <div class="detail">
+        <strong>Giornata — lucrul pe zi</strong>
+        Se aplică doar atâta intonaco cât poate fi pictat înainte ca tencuiala să „tragă". Dacă stratul se usucă prea mult, porii se închid, iar carbonatarea nu mai poate îngloba pigmentul — rezultând o pictură „moartă" (pulverulentă).
+      </div>
+      <div class="detail">
+        <strong>Profunzimea artistică</strong>
+        Deoarece pictorul lucrează contra cronometru, fiecare trăsătură de pensulă trebuie să fie sigură. În frescă nu există corecturi ușoare — fiecare strat de culoare aplicat pe tencuiala crudă trebuie să respecte ierarhia luminii și a umbrei specifică dogmei bizantine.
+      </div>
+    </div>
+
+    <div class="fresco-outro">
+      Prin această succesiune de procese — de la hidratarea betonului sau a cărămizii până la cristalizarea delicată a stratului de câlți și var — fresca rămâne cea mai rezistentă tehnică din istorie. Este triumful spiritului asupra materiei: o imagine care nu se decolorează și care, asemenea unei rugăciuni sculptate în calcar, respiră odată cu zidul pe care a fost zămislită pentru eternitate.
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════ -->
+<!-- PAGE: CONTUL MEU                   -->
+<!-- ═══════════════════════════════════ -->
+<div class="page" id="page-cont">
+  <div class="page-wrap">
+    <div class="page-header">
+      <h1>Contul meu</h1>
+      <p>Autentifică-te pentru a-ți vedea comenzile și a salva favoritele</p>
+    </div>
+
+    <div class="account-grid">
+      <div class="account-form">
+        <h3>Autentificare</h3>
+        <p>Intră în cont pentru a continua</p>
+        <div class="form-row">
+          <label>Email</label>
+          <input type="email" placeholder="email@exemplu.ro">
+        </div>
+        <div class="form-row">
+          <label>Parolă</label>
+          <input type="password" placeholder="••••••••">
+        </div>
+        <button class="btn btn-primary" style="width:100%">Intră în cont</button>
+        <div class="form-actions">
+          <span class="form-link">Cont nou</span>
+          <span class="form-link">Am uitat parola</span>
+        </div>
+      </div>
+
+      <div class="orders-panel">
+        <h3>Istoric comenzi</h3>
+        <p>Toate comenzile tale, într-un singur loc</p>
+
+        <div class="order-card">
+          <div>
+            <div class="order-id">#AFR-1024</div>
+            <div class="order-date">12 aprilie 2026</div>
+          </div>
+          <div class="order-items">
+            3 produse · Ocru Havanna, Terra Pozzuoli, Foiță de aur 22K
+            <br><span class="order-status">Livrată</span>
+          </div>
+          <div class="order-total">564,50 RON</div>
+        </div>
+
+        <div class="order-card">
+          <div>
+            <div class="order-id">#AFR-1019</div>
+            <div class="order-date">28 martie 2026</div>
+          </div>
+          <div class="order-items">
+            2 produse · Ultramarine Blue dark, True Green
+            <br><span class="order-status">Livrată</span>
+          </div>
+          <div class="order-total">379,91 RON</div>
+        </div>
+
+        <div class="order-card">
+          <div>
+            <div class="order-id">#AFR-1012</div>
+            <div class="order-date">6 martie 2026</div>
+          </div>
+          <div class="order-items">
+            1 produs · Cobalt Blue dark
+            <br><span class="order-status" style="background:rgba(196,85,56,0.15);color:#B04A30">În livrare</span>
+          </div>
+          <div class="order-total">1.881,39 RON</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-inner">
@@ -660,49 +1026,113 @@ a{color:inherit;text-decoration:none}
 
 <script>
 // ── PIGMENT DATA ──
+// Prices: final RON including VAT, per 1 kg (source: Anastasia pricelist, Apr 2026)
 var pigments = [
-  { name:'Sinopia',          weight:'100g', color:'#C45538', highlight:'#D4654A', light:'#E0806A', bg:'#FDF5F2' },
-  { name:'Terra Verde',      weight:'100g', color:'#7B8E65', highlight:'#8BA075', light:'#9DB088', bg:'#F4F6F0' },
-  { name:'Ultramarin Natural',weight:'100g',color:'#3B5E8C', highlight:'#4A72A0', light:'#5B86B4', bg:'#F0F3F7', tag:'Popular' },
-  { name:'Ocru Galben',      weight:'100g', color:'#D4A843', highlight:'#E0BC5C', light:'#EBCE78', bg:'#FDF9F0' },
-  { name:'Ocru Românesc',    weight:'100g', color:'#B5513A', highlight:'#C8634E', light:'#D87A65', bg:'#FAF2EF' },
-  { name:'Umbră Arsă',       weight:'100g', color:'#6B5B4E', highlight:'#7D6E62', light:'#928376', bg:'#F3F1EF' },
-  { name:'Alb de Var',       weight:'250g', color:'#D8D0C4', highlight:'#E4DDD4', light:'#EEEAE4', bg:'#FAFAF8' },
-  { name:'Negru de Viță',    weight:'100g', color:'#2A2A2A', highlight:'#3E3E3E', light:'#525252', bg:'#F0F0F0' },
-  { name:'Roșu Frescă',     weight:'100g', color:'#8B3A3A', highlight:'#A04848', light:'#B45E5E', bg:'#F8F0F0' },
+  { name:'Burnt Sienna',                   price:82.54,   color:'#8B4513', tag:null },
+  { name:'Cadmium Red medium',             price:553.49,  color:'#D42B2B', tag:null },
+  { name:'Cadmium Red ruby',               price:585.05,  color:'#9B1C2E', tag:null },
+  { name:'Cadmium Yellow medium',          price:396.91,  color:'#E6B800', tag:null },
+  { name:'Carmine Red',                    price:179.64,  color:'#960018', tag:null },
+  { name:'Chrome Oxide Green dull',        price:358.07,  color:'#5F7F5F', tag:null },
+  { name:'Cobalt Blue dark',               price:1881.39, color:'#1E3A8A', tag:'Premium' },
+  { name:'English Red medium',             price:93.46,   color:'#B5513A', tag:null },
+  { name:'Indian Red',                     price:142.01,  color:'#A85038', tag:null },
+  { name:'Light Ochre French',             price:80.11,   color:'#D4A843', tag:null },
+  { name:'Lime Colour True Yellow',        price:115.31,  color:'#CDCE2A', tag:null },
+  { name:'Manganese Blue',                 price:168.72,  color:'#4A90C8', tag:'Non-toxic' },
+  { name:'Nickel-Titanium Yellow',         price:433.33,  color:'#EED540', tag:null },
+  { name:'Ochre Havanna French',           price:60.08,   color:'#B8956A', tag:null },
+  { name:'Ochre Sahara French',            price:74.04,   color:'#C8A568', tag:null },
+  { name:'Raw Sienna Italian',             price:138.37,  color:'#B07940', tag:null },
+  { name:'Red Ochre French',               price:110.46,  color:'#A85038', tag:null },
+  { name:'Study Pigment Golden-Yellow',    price:132.91,  color:'#E8B22C', tag:null },
+  { name:'Terra Pozzuoli',                 price:104.39,  color:'#A85E48', tag:null },
+  { name:'True Blue dark',                 price:172.36,  color:'#2C3E7B', tag:null },
+  { name:'True Blue medium',               price:135.34,  color:'#3B5E8C', tag:null },
+  { name:'True Bordeaux',                  price:163.86,  color:'#722F37', tag:null },
+  { name:'True Green',                     price:142.01,  color:'#50A060', tag:null },
+  { name:'Turquoise Blue',                 price:144.44,  color:'#40C8B8', tag:null },
+  { name:'Ultramarine Blue dark',          price:237.90,  color:'#2E4A80', tag:null },
+  { name:'Ultramarine Blue medium',        price:285.24,  color:'#3B5E8C', tag:null },
+  { name:'Universal True Red',             price:120.17,  color:'#D93838', tag:null },
+  { name:'Vermilion Red (synthetic)',      price:176.00,  color:'#E34234', tag:null },
 ];
 
+// Per-product kg quantity (before adding to cart)
+var productQty = {};
+pigments.forEach(function(p) { productQty[p.name] = 1; });
+
+function lightenColor(hex, amt) {
+  var r = parseInt(hex.slice(1,3),16), g = parseInt(hex.slice(3,5),16), b = parseInt(hex.slice(5,7),16);
+  r = Math.min(255, Math.round(r + (255-r)*amt));
+  g = Math.min(255, Math.round(g + (255-g)*amt));
+  b = Math.min(255, Math.round(b + (255-b)*amt));
+  return '#' + [r,g,b].map(function(v) { return v.toString(16).padStart(2,'0'); }).join('');
+}
+
 function pigmentSVG(p) {
+  var hi = lightenColor(p.color, 0.18);
+  var lt = lightenColor(p.color, 0.38);
+  var bg = lightenColor(p.color, 0.93);
   return '<svg width="100%" height="100%" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid meet" fill="none">' +
-    '<rect width="200" height="200" fill="' + p.bg + '"/>' +
+    '<rect width="200" height="200" fill="' + bg + '"/>' +
     '<ellipse cx="100" cy="155" rx="55" ry="16" fill="' + p.color + '" opacity="0.12"/>' +
-    '<path d="M55 155 Q65 105 100 90 Q135 105 145 155 Z" fill="' + p.color + '" opacity="0.8"/>' +
-    '<path d="M65 152 Q73 112 100 100 Q127 112 135 152 Z" fill="' + p.highlight + '"/>' +
-    '<path d="M75 148 Q82 120 100 112 Q118 120 125 148 Z" fill="' + p.light + '" opacity="0.6"/>' +
+    '<path d="M55 155 Q65 105 100 90 Q135 105 145 155 Z" fill="' + p.color + '" opacity="0.85"/>' +
+    '<path d="M65 152 Q73 112 100 100 Q127 112 135 152 Z" fill="' + hi + '"/>' +
+    '<path d="M75 148 Q82 120 100 112 Q118 120 125 148 Z" fill="' + lt + '" opacity="0.7"/>' +
     '<circle cx="55" cy="148" r="2" fill="' + p.color + '" opacity="0.25"/>' +
     '<circle cx="142" cy="150" r="1.5" fill="' + p.color + '" opacity="0.2"/>' +
     '<circle cx="65" cy="152" r="1" fill="' + p.color + '" opacity="0.2"/>' +
     '</svg>';
 }
 
+function formatPrice(n) {
+  return n.toLocaleString('ro-RO', {minimumFractionDigits:2, maximumFractionDigits:2}) + ' RON';
+}
+
 function renderProducts() {
   var grid = document.getElementById('productGrid');
   var html = '';
   pigments.forEach(function(p) {
+    var safeName = p.name.replace(/'/g,"&apos;").replace(/"/g,"&quot;");
+    var jsName = p.name.replace(/'/g,"\\'");
     html += '<div class="prod"><div class="prod-img">' +
       (p.tag ? '<span class="prod-tag">' + p.tag + '</span>' : '') +
       '<button class="prod-fav"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M12 21C12 21 3 13.5 3 8.5C3 5.4 5.4 3 8.5 3C10.2 3 11.7 3.8 12 5C12.3 3.8 13.8 3 15.5 3C18.6 3 21 5.4 21 8.5C21 13.5 12 21 12 21Z"/></svg></button>' +
       pigmentSVG(p) +
       '</div><div class="prod-body">' +
-      '<div class="prod-name">' + p.name + '</div>' +
-      '<div class="prod-meta">' + p.weight + '</div>' +
-      '<div class="prod-price">— RON</div>' +
-      '<button class="prod-add" onclick="addToCart(\'' + p.name.replace(/'/g,"\\'") + '\',\'' + p.color + '\')">Adaugă în coș</button>' +
+      '<div class="prod-name">' + safeName + '</div>' +
+      '<div class="prod-meta">' + formatPrice(p.price) + ' / kg <span style="color:var(--text-light)">· TVA inclusă</span></div>' +
+      '<div class="qty-selector">' +
+        '<button class="qty-btn" onclick="adjustQty(\'' + jsName + '\',-0.5,this)">−</button>' +
+        '<div class="qty-display" data-qty-for="' + safeName + '">' + productQty[p.name] + ' <span>kg</span></div>' +
+        '<button class="qty-btn" onclick="adjustQty(\'' + jsName + '\',0.5,this)">+</button>' +
+      '</div>' +
+      '<button class="prod-add" onclick="addToCart(\'' + jsName + '\',\'' + p.color + '\',' + p.price + ')">Adaugă în coș</button>' +
       '</div></div>';
   });
   grid.innerHTML = html;
+  document.getElementById('layoutCount').textContent = pigments.length + ' pigmenți disponibili';
 }
 renderProducts();
+
+function adjustQty(name, delta, btn) {
+  var current = productQty[name] || 1;
+  var next = Math.max(0.5, Math.round((current + delta) * 2) / 2);
+  productQty[name] = next;
+  var display = btn.parentElement.querySelector('.qty-display');
+  display.innerHTML = next + ' <span>kg</span>';
+}
+
+function setLayout(cols) {
+  var grid = document.getElementById('productGrid');
+  grid.classList.remove('cols-1','cols-2');
+  if (cols === 1) grid.classList.add('cols-1');
+  if (cols === 2) grid.classList.add('cols-2');
+  document.querySelectorAll('.layout-btn').forEach(function(b) { b.classList.remove('active'); });
+  var btns = document.querySelectorAll('.layout-btn');
+  btns[cols - 1].classList.add('active');
+}
 
 // ── NAV ──
 function showPage(id) {
@@ -710,7 +1140,7 @@ function showPage(id) {
   document.getElementById('page-' + id).classList.add('active');
   document.querySelectorAll('.nav-tabs a').forEach(function(a) { a.classList.remove('active'); });
   var tabs = document.querySelectorAll('.nav-tabs a');
-  var map = { home:0, pigmenti:1, foita:2, pensule:3, materiale:4, despre:5 };
+  var map = { home:0, pigmenti:1, foita:2, pensule:3, materiale:4, fresca:5, despre:6 };
   if (map[id] !== undefined) tabs[map[id]].classList.add('active');
   window.scrollTo(0, 0);
 }
@@ -728,28 +1158,41 @@ function toggleCart() {
   document.getElementById('cartSidebar').classList.toggle('active');
   document.getElementById('cartOverlay').classList.toggle('active');
 }
-function addToCart(name, color) {
+function addToCart(name, color, price) {
+  var qty = productQty[name] || 1;
   var item = cart.find(function(i) { return i.name === name; });
-  if (item) { item.qty++; } else { cart.push({ name:name, color:color, qty:1 }); }
+  if (item) {
+    item.qty += qty;
+  } else {
+    cart.push({ name:name, color:color, price:(price||0), qty:qty });
+  }
   renderCart();
 }
 function removeFromCart(i) { cart.splice(i, 1); renderCart(); }
-function updateQty(i, d) { cart[i].qty += d; if (cart[i].qty <= 0) cart.splice(i, 1); renderCart(); }
+function updateQty(i, d) {
+  cart[i].qty = Math.round((cart[i].qty + d) * 2) / 2;
+  if (cart[i].qty <= 0) cart.splice(i, 1);
+  renderCart();
+}
 function renderCart() {
   var el = document.getElementById('cartItems');
   var count = cart.reduce(function(s, i) { return s + i.qty; }, 0);
-  document.getElementById('cartCount').textContent = count;
+  document.getElementById('cartCount').textContent = count % 1 === 0 ? count : count.toFixed(1);
   if (!cart.length) {
     el.innerHTML = '<div class="cart-empty">Coșul este gol.</div>';
-    document.getElementById('cartTotal').textContent = '0 RON';
+    document.getElementById('cartTotal').textContent = '0,00 RON';
     return;
   }
+  var total = 0;
   var h = '';
   cart.forEach(function(item, i) {
-    h += '<div class="cart-item"><div class="cart-item-swatch" style="background:' + item.color + ';opacity:0.65"></div><div class="cart-item-info"><div class="cart-item-name">' + item.name + '</div><div class="cart-item-price">— RON</div><div class="cart-item-qty"><button onclick="updateQty(' + i + ',-1)">&minus;</button><span>' + item.qty + '</span><button onclick="updateQty(' + i + ',1)">+</button></div><button class="cart-item-rm" onclick="removeFromCart(' + i + ')">Elimină</button></div></div>';
+    var sub = (item.price || 0) * item.qty;
+    total += sub;
+    var subtotal = item.price ? formatPrice(sub) : '—';
+    h += '<div class="cart-item"><div class="cart-item-swatch" style="background:' + item.color + ';opacity:0.75"></div><div class="cart-item-info"><div class="cart-item-name">' + item.name + '</div><div class="cart-item-price">' + subtotal + '</div><div class="cart-item-qty"><button onclick="updateQty(' + i + ',-0.5)">&minus;</button><span>' + item.qty + ' kg</span><button onclick="updateQty(' + i + ',0.5)">+</button></div><button class="cart-item-rm" onclick="removeFromCart(' + i + ')">Elimină</button></div></div>';
   });
   el.innerHTML = h;
-  document.getElementById('cartTotal').textContent = 'Prețuri în curând';
+  document.getElementById('cartTotal').textContent = formatPrice(total);
 }
 
 // ── MOBILE ──
