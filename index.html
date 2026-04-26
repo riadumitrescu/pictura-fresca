@@ -57,7 +57,9 @@ input,button{font-family:inherit}
 .nav-action-label small{display:block;font-size:10px;color:var(--text-light);font-weight:400}
 .nav-action-label b{font-weight:500;font-size:12.5px;color:var(--text)}
 .cart-badge{position:absolute;top:2px;left:14px;background:var(--accent);color:#fff;font-size:9px;font-weight:700;min-width:16px;height:16px;border-radius:8px;display:flex;align-items:center;justify-content:center;padding:0 4px}
-.nav-hamburger{display:none;background:none;border:none;cursor:pointer;color:var(--text);padding:6px}
+.nav-hamburger{display:none;background:none;border:none;cursor:pointer;color:var(--text);padding:8px}
+.nav-mobile-icon{display:none;background:none;border:none;cursor:pointer;color:var(--text);padding:8px;position:relative}
+.nav-mobile-icon .cart-badge-mobile{position:absolute;top:0;right:0;background:var(--accent);color:#fff;font-size:9px;font-weight:700;min-width:16px;height:16px;border-radius:8px;display:flex;align-items:center;justify-content:center;padding:0 4px}
 
 /* ── CATEGORY SUB-NAV ── */
 .cat-nav{background:#fff;border-bottom:1px solid var(--border);padding:0}
@@ -247,6 +249,19 @@ input,button{font-family:inherit}
 .wa-float:hover{transform:scale(1.05)}
 .wa-float svg{color:#fff}
 
+/* ── MOBILE BOTTOM BAR ── */
+.mobile-bar{display:none;position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--border);z-index:90;height:60px;padding:env(safe-area-inset-bottom,0) 0 0;justify-content:space-around;align-items:stretch;box-shadow:0 -2px 12px rgba(0,0,0,0.05)}
+.mobile-bar a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:var(--text-mid);font-size:10px;font-weight:500;cursor:pointer;text-decoration:none;border:none;background:none;position:relative;padding:0}
+.mobile-bar a.active{color:var(--accent)}
+.mobile-bar a svg{width:20px;height:20px}
+.mobile-bar a .bar-badge{position:absolute;top:8px;right:25%;background:var(--accent);color:#fff;font-size:9px;font-weight:700;min-width:16px;height:16px;border-radius:8px;display:flex;align-items:center;justify-content:center;padding:0 4px}
+
+/* ── FILTER DRAWER MOBILE ── */
+.filter-toggle-bar{display:none;background:#fff;border:1px solid var(--border-light);border-radius:4px;padding:10px 14px;margin-bottom:10px;justify-content:space-between;align-items:center;font-size:13px;font-weight:600;cursor:pointer;color:var(--text);width:100%}
+.filter-toggle-bar svg{color:var(--text-mid)}
+.filter-overlay{display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,0.4)}
+.filter-overlay.active{display:block}
+
 /* ── PAGE HEADER (simple) ── */
 .page-title{background:#fff;border:1px solid var(--border-light);border-radius:4px;padding:20px 24px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px}
 .page-title h1{font-family:'DM Serif Display',serif;font-size:26px;font-weight:400;letter-spacing:-0.3px}
@@ -353,36 +368,128 @@ input,button{font-family:inherit}
   .trust-strip{grid-template-columns:repeat(2,1fr)}
   .footer-grid{grid-template-columns:1.5fr 1fr 1fr 1fr}
 }
+
+/* TABLET / MOBILE: <900px */
 @media(max-width:900px){
+  body{padding-bottom:60px}
+  .topbar{padding:6px 0;font-size:11px}
   .topbar-right{display:none}
+  .topbar-inner{justify-content:center;text-align:center}
   .cat-nav{display:none}
   .nav-search{display:none}
+  .nav-actions{display:none}
   .nav-hamburger{display:block}
-  .nav-top{grid-template-columns:auto 1fr auto;gap:16px;padding:14px 16px}
-  .nav-action-label{display:none}
-  .hero-banner{grid-template-columns:1fr;padding:28px 24px}
-  .hero-banner h1{font-size:28px}
-  .hero-banner-side{display:none}
-  .container{padding:16px}
-  .shop-layout{grid-template-columns:1fr}
-  .filters{position:static;max-height:none}
-  .products{grid-template-columns:repeat(2,1fr)}
-  .products.cols-3{grid-template-columns:repeat(2,1fr)}
+  .nav-mobile-icon{display:flex;align-items:center;justify-content:center}
+  .nav-top{grid-template-columns:auto 1fr auto;gap:8px;padding:10px 14px}
+  .nav-brand-name{font-size:20px}
+  .nav-brand-sub{display:none}
+  .logo-mark{width:36px;height:36px;font-size:20px}
+  .hero-banner{grid-template-columns:1fr;padding:28px 22px;gap:22px}
+  .hero-banner h1{font-size:26px;line-height:1.2}
+  .hero-banner p{font-size:13px}
+  .hero-banner-side{grid-template-columns:repeat(4,1fr);gap:8px}
+  .hero-tile{padding:12px 10px}
+  .hero-tile .val{font-size:18px}
+  .hero-tile .sub{font-size:10px}
+  .container{padding:14px}
+  .section-head{padding-bottom:8px;margin-bottom:12px}
+  .section-head h2{font-size:18px}
+  .shop-layout{grid-template-columns:1fr;gap:12px}
+  .filters{position:fixed;top:0;left:-320px;width:300px;max-width:85vw;height:100vh;z-index:201;border-radius:0;border:none;border-right:1px solid var(--border);transition:left .25s;overflow-y:auto;padding:0;margin:0}
+  .filters.active{left:0}
+  .filter-head{padding:18px;border-bottom:1px solid var(--border);margin-bottom:0;background:var(--dark);color:#fff;border-radius:0;position:sticky;top:0;z-index:1}
+  .filter-head h3{color:#fff}
+  .filter-head .filter-clear{color:#E8C472}
+  .filter-group{padding:14px 18px}
+  .filter-toggle-bar{display:flex}
   .gold-detail{grid-template-columns:1fr}
-  .gold-img{border-right:none;border-bottom:1px solid var(--border-light)}
-  .account-grid{grid-template-columns:1fr}
+  .gold-img{border-right:none;border-bottom:1px solid var(--border-light);padding:30px}
+  .gold-info{padding:24px}
+  .gold-info .specs{grid-template-columns:1fr 1fr}
+  .gold-price-big{font-size:24px}
+  .account-grid{grid-template-columns:1fr;gap:12px}
+  .order-row{grid-template-columns:1fr auto;gap:10px}
+  .order-row > div:nth-child(2){grid-column:1 / -1}
   .mat-grid{grid-template-columns:1fr}
-  .fresco-elements{grid-template-columns:1fr}
-  .footer-grid{grid-template-columns:1fr 1fr}
+  .fresco-elements{grid-template-columns:1fr 1fr 1fr;gap:8px}
+  .fresco-element{padding:14px 10px}
+  .fresco-element h4{font-size:13px}
+  .fresco-element p{font-size:11px}
+  .fresco-section{padding:22px 18px}
+  .fresco-section h3{font-size:18px}
+  .content-block{padding:24px 20px}
+  .content-block h2{font-size:22px}
+  .chem-formula .chem-eq{font-size:18px;letter-spacing:0}
+  .chem-formula .chem-eq .arrow{margin:0 6px}
+  .chem-formula{padding:22px 16px}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:24px}
+  .footer{padding:32px 16px 16px}
+  .footer-bottom{flex-direction:column;align-items:center;text-align:center}
   .cart-sidebar{width:100%}
-  .wa-float{bottom:14px;right:14px;width:48px;height:48px}
+  .cart-foot{padding-bottom:calc(16px + env(safe-area-inset-bottom,0))}
+  .wa-float{bottom:74px;right:12px;width:48px;height:48px}
+  .mobile-bar{display:flex}
+  .page-title{padding:16px 18px}
+  .page-title h1{font-size:22px}
+  .crumb{padding:10px 0}
 }
-@media(max-width:560px){
+
+/* PHONE: <600px */
+@media(max-width:600px){
+  .home-cats{grid-template-columns:1fr 1fr;gap:10px}
+  .home-cat{padding:16px 14px;gap:10px}
+  .home-cat-icon{width:40px;height:40px}
+  .home-cat-icon svg{width:20px;height:20px}
+  .home-cat-text h3{font-size:13px}
+  .home-cat-text p{font-size:10.5px}
+  .trust-strip{grid-template-columns:1fr 1fr;padding:14px;gap:14px}
+  .trust-item{font-size:11px}
+  .trust-item b{font-size:12px}
+  .trust-item small{font-size:10px}
+  .products{grid-template-columns:repeat(2,1fr);gap:8px}
+  .products.cols-3,.products.cols-4{grid-template-columns:repeat(2,1fr)}
+  .prod-body{padding:10px 11px 12px}
+  .prod-name{font-size:12px;min-height:30px;margin-bottom:6px}
+  .prod-sku{font-size:10px}
+  .prod-price{font-size:15px}
+  .prod-price-vat{font-size:9px}
+  .prod-stock{font-size:10px;margin-bottom:8px}
+  .prod-add{padding:9px;font-size:11px}
+  .qty-selector{height:32px;margin-bottom:6px}
+  .qty-display{font-size:12px}
+  .shop-toolbar{flex-direction:column;align-items:stretch;gap:8px;padding:10px 12px}
+  .shop-toolbar-right{width:100%;justify-content:space-between}
+  .sort-select{flex:1}
+  .layout-toggles{display:none}
+  .page-title{flex-direction:column;align-items:flex-start;padding:14px 16px}
+  .page-title h1{font-size:20px}
+  .hero-banner h1{font-size:22px}
+  .hero-banner{padding:22px 18px}
+  .hero-cta{flex-direction:column;width:100%}
+  .hero-cta .btn{width:100%;justify-content:center}
+  .hero-banner-side{grid-template-columns:1fr 1fr}
+  .gold-info .specs{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr;gap:20px}
+  .footer-brand p{max-width:none}
+  .filter-toggle-bar{padding:12px 14px;font-size:13px}
+  .pagination button{min-width:32px;height:32px;font-size:12px}
+  .cart-item{gap:10px;padding:12px 0}
+  .cart-item-swatch{width:48px;height:48px}
+  .cart-item-name{font-size:12.5px}
+  .cart-item-price{font-size:11px}
+  .cart-item-qty span{font-size:11px;min-width:42px}
+  .cart-item-subtotal{font-size:12px}
+  .cart-checkout-btn{padding:14px}
+  .nav-mobile-icon svg{width:22px;height:22px}
+  .nav-hamburger svg{width:24px;height:24px}
+}
+
+/* SMALL PHONE: <380px */
+@media(max-width:380px){
   .home-cats{grid-template-columns:1fr}
   .trust-strip{grid-template-columns:1fr}
-  .products{grid-template-columns:1fr}
-  .shop-toolbar{flex-direction:column;align-items:flex-start}
-  .page-title{flex-direction:column;align-items:flex-start}
+  .hero-banner-side{grid-template-columns:1fr 1fr;gap:6px}
+  .fresco-elements{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -435,6 +542,13 @@ input,button{font-family:inherit}
         <span class="cart-badge" id="cartCount">0</span>
         <div class="nav-action-label"><small>0,00 RON</small><b>Coșul meu</b></div>
       </button>
+      <button class="nav-mobile-icon" onclick="toggleSearch()" title="Caută">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><line x1="16" y1="16" x2="21" y2="21"/></svg>
+      </button>
+      <button class="nav-mobile-icon" onclick="toggleCart()" title="Coș">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6V20C3 21.1 3.9 22 5 22H19C20.1 22 21 21.1 21 20V6L18 2H6Z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10C16 12.2 14.2 14 12 14C9.8 14 8 12.2 8 10"/></svg>
+        <span class="cart-badge-mobile" id="cartCountMobile">0</span>
+      </button>
       <button class="nav-hamburger" onclick="toggleMobile()">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
@@ -464,6 +578,12 @@ input,button{font-family:inherit}
     <span style="font-family:'DM Serif Display',serif;font-size:20px">Affresco</span>
     <button onclick="toggleMobile()" style="background:none;border:none;cursor:pointer"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
   </div>
+  <div style="padding:0 20px 4px">
+    <div style="position:relative">
+      <input type="text" placeholder="Caută produse..." onclick="toggleMobile();toggleSearch()" readonly style="width:100%;padding:10px 14px;padding-right:42px;border:1.5px solid var(--border);border-radius:3px;font-size:13.5px;outline:none;background:#fff;font-family:inherit">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);pointer-events:none"><circle cx="11" cy="11" r="7"/><line x1="16" y1="16" x2="21" y2="21"/></svg>
+    </div>
+  </div>
   <div class="mobile-menu-links">
     <a onclick="showPage('home');toggleMobile()">Acasă</a>
     <a onclick="showPage('pigmenti');toggleMobile()">Pigmenți</a>
@@ -473,6 +593,16 @@ input,button{font-family:inherit}
     <a onclick="showPage('fresca');toggleMobile()">Tehnica frescei</a>
     <a onclick="showPage('despre');toggleMobile()">Despre noi</a>
     <a onclick="showPage('cont');toggleMobile()">Contul meu</a>
+  </div>
+  <div style="padding:20px;border-top:1px solid var(--border-light);font-size:12px;color:var(--text-light);margin-top:auto">
+    <div style="margin-bottom:8px"><strong style="color:var(--text)">+40 700 000 000</strong></div>
+    <div>contact@affresco.ro</div>
+    <div style="margin-top:12px;display:flex;gap:10px">
+      <a href="https://wa.me/40700000000" style="display:inline-flex;align-items:center;gap:6px;color:#25D366;font-weight:600">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-1s-.5-.1-.7.1-.8 1-.9 1.2-.3.2-.5.1c-.7-.4-1.5-.8-2.3-1.7-.6-.7-1.1-1.5-1.3-1.7s0-.4.1-.5.2-.3.4-.4.2-.3.3-.5 0-.3 0-.5-.7-1.6-.9-2.2-.4-.5-.7-.5h-.5c-.2 0-.5.1-.7.3s-.9.8-.9 2 .9 2.3 1 2.5 1.8 2.8 4.5 3.9c2.2.9 2.6.7 3.1.6s1.7-.7 1.9-1.3.2-1.2.2-1.3-.3-.2-.6-.3z"/></svg>
+        WhatsApp
+      </a>
+    </div>
   </div>
 </div>
 
@@ -624,12 +754,22 @@ input,button{font-family:inherit}
       </div>
     </div>
 
+    <button class="filter-toggle-bar" onclick="toggleFilters()">
+      <span style="display:flex;align-items:center;gap:8px">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="4" y1="6" x2="20" y2="6"/><line x1="7" y1="12" x2="17" y2="12"/><line x1="10" y1="18" x2="14" y2="18"/></svg>
+        Filtrează produsele
+      </span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+
+    <div class="filter-overlay" id="filterOverlay" onclick="toggleFilters()"></div>
+
     <div class="shop-layout">
 
-      <aside class="filters">
+      <aside class="filters" id="filtersPanel">
         <div class="filter-head">
           <h3>Filtrează</h3>
-          <span class="filter-clear">Resetează</span>
+          <span class="filter-clear" onclick="toggleFilters()" style="cursor:pointer">Închide</span>
         </div>
 
         <div class="filter-group">
@@ -990,6 +1130,31 @@ input,button{font-family:inherit}
   </div>
 </footer>
 
+<!-- MOBILE BOTTOM BAR -->
+<nav class="mobile-bar" id="mobileBar">
+  <a onclick="showPage('home')" data-mb="home">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9.5L12 2l9 7.5V21a1 1 0 01-1 1h-5v-7H9v7H4a1 1 0 01-1-1V9.5z"/></svg>
+    Acasă
+  </a>
+  <a onclick="showPage('pigmenti')" data-mb="pigmenti">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg>
+    Magazin
+  </a>
+  <a onclick="toggleSearch()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><line x1="16" y1="16" x2="21" y2="21"/></svg>
+    Caută
+  </a>
+  <a onclick="showPage('cont')" data-mb="cont">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 21V19C20 16.8 18.2 15 16 15H8C5.8 15 4 16.8 4 19V21"/><circle cx="12" cy="7" r="4"/></svg>
+    Cont
+  </a>
+  <a onclick="toggleCart()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 2L3 6V20C3 21.1 3.9 22 5 22H19C20.1 22 21 21.1 21 20V6L18 2H6Z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10C16 12.2 14.2 14 12 14C9.8 14 8 12.2 8 10"/></svg>
+    <span class="bar-badge" id="cartCountBar" style="display:none">0</span>
+    Coș
+  </a>
+</nav>
+
 <!-- WHATSAPP FLOAT -->
 <a href="https://wa.me/40700000000" target="_blank" class="wa-float" title="Contactează-ne pe WhatsApp">
   <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-1s-.5-.1-.7.1-.8 1-.9 1.2-.3.2-.5.1c-.7-.4-1.5-.8-2.3-1.7-.6-.7-1.1-1.5-1.3-1.7s0-.4.1-.5.2-.3.4-.4.2-.3.3-.5 0-.3 0-.5-.7-1.6-.9-2.2-.4-.5-.7-.5h-.5c-.2 0-.5.1-.7.3s-.9.8-.9 2 .9 2.3 1 2.5 1.8 2.8 4.5 3.9c2.2.9 2.6.7 3.1.6s1.7-.7 1.9-1.3.2-1.2.2-1.3-.3-.2-.6-.3zM12 2a10 10 0 00-8.5 15.3L2 22l4.9-1.3A10 10 0 1012 2zm0 18.2a8.1 8.1 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1120.2 12a8.2 8.2 0 01-8.2 8.2z"/></svg>
@@ -1104,6 +1269,9 @@ function renderFeatured() {
 renderProducts();
 renderFeatured();
 
+// Initialize mobile bar active state on home
+(function(){ var mbHome = document.querySelector('.mobile-bar a[data-mb="home"]'); if (mbHome) mbHome.classList.add('active'); })();
+
 function adjustQty(name, delta, btn) {
   var current = productQty[name] || 1;
   var next = Math.max(0.5, Math.round((current + delta) * 2) / 2);
@@ -1133,7 +1301,18 @@ function showPage(id) {
   var map = { home:0, pigmenti:1, foita:2, pensule:3, materiale:4, fresca:5, despre:6 };
   var tabs = document.querySelectorAll('.cat-nav a');
   if (map[id] !== undefined && tabs[map[id]]) tabs[map[id]].classList.add('active');
+  // Sync mobile bottom bar
+  document.querySelectorAll('.mobile-bar a[data-mb]').forEach(function(a) { a.classList.remove('active'); });
+  var mbId = (id === 'foita' || id === 'pensule' || id === 'materiale') ? 'pigmenti' : id;
+  var mbActive = document.querySelector('.mobile-bar a[data-mb="' + mbId + '"]');
+  if (mbActive) mbActive.classList.add('active');
   window.scrollTo(0, 0);
+}
+
+// ── FILTERS DRAWER (mobile) ──
+function toggleFilters() {
+  document.getElementById('filtersPanel').classList.toggle('active');
+  document.getElementById('filterOverlay').classList.toggle('active');
 }
 
 // ── SEARCH ──
@@ -1164,7 +1343,15 @@ function updateQty(i, d) {
 function renderCart() {
   var el = document.getElementById('cartItems');
   var count = cart.reduce(function(s, i) { return s + i.qty; }, 0);
-  document.getElementById('cartCount').textContent = count % 1 === 0 ? count : count.toFixed(1);
+  var displayCount = count % 1 === 0 ? count : count.toFixed(1);
+  document.getElementById('cartCount').textContent = displayCount;
+  var mc = document.getElementById('cartCountMobile');
+  if (mc) mc.textContent = displayCount;
+  var bc = document.getElementById('cartCountBar');
+  if (bc) {
+    bc.textContent = displayCount;
+    bc.style.display = count > 0 ? 'flex' : 'none';
+  }
   if (!cart.length) {
     el.innerHTML = '<div class="cart-empty">Coșul este gol.</div>';
     document.getElementById('cartTotal').textContent = '0,00 RON';
@@ -1205,6 +1392,11 @@ document.addEventListener('keydown', function(e) {
     document.getElementById('searchOverlay').classList.remove('active');
     document.getElementById('cartSidebar').classList.remove('active');
     document.getElementById('cartOverlay').classList.remove('active');
+    document.getElementById('mobileMenu').classList.remove('active');
+    var fp = document.getElementById('filtersPanel');
+    var fo = document.getElementById('filterOverlay');
+    if (fp) fp.classList.remove('active');
+    if (fo) fo.classList.remove('active');
   }
 });
 </script>
